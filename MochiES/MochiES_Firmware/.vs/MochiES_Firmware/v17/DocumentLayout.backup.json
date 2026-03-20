@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "F:\\Program Files (x86)\\Proyectos a largo plazo\\MochiES\\MochiES_Firmware\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9E665AE3-828F-4C94-B99B-55EEF551C135}|MochiES_Firmware\\MochiES_Firmware.nfproj|f:\\program files (x86)\\proyectos a largo plazo\\mochies\\mochies_firmware\\mochies_firmware\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9E665AE3-828F-4C94-B99B-55EEF551C135}|MochiES_Firmware\\MochiES_Firmware.nfproj|solutionrelative:mochies_firmware\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "F:\\Program Files (x86)\\Proyectos a largo plazo\\MochiES\\MochiES_Firmware\\MochiES_Firmware\\Program.cs",
+              "RelativeDocumentMoniker": "MochiES_Firmware\\Program.cs",
+              "ToolTip": "F:\\Program Files (x86)\\Proyectos a largo plazo\\MochiES\\MochiES_Firmware\\MochiES_Firmware\\Program.cs",
+              "RelativeToolTip": "MochiES_Firmware\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-20T00:22:49.568Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
