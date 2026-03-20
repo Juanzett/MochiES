@@ -101,7 +101,7 @@ nanoff --target ESP32_C3 --update --serialport COM3
 ### Paso 2 — Clonar el repositorio
 
 ```bash
-git clone https://github.com/TU_USUARIO/MochiES.git
+git clone https://github.com/Juanzett/MochiES.git
 cd MochiES
 ```
 
