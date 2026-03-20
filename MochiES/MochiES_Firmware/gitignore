@@ -1,0 +1,76 @@
+# ============================================================
+#  .gitignore — Proyecto MochiES
+#  Visual Studio 2022 + .NET nanoFramework + WinForms
+# ============================================================
+
+# ------ Visual Studio ------
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.vsidx
+*.v2
+.vscode/
+
+# ------ Build ------
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+out/
+build/
+publish/
+
+# ------ NuGet ------
+*.nupkg
+*.snupkg
+packages/
+!**/packages/repositories.config
+*.nuget.props
+*.nuget.targets
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# ------ nanoFramework ------
+*.nfproj.user
+nano-nuget-cache/
+
+# ------ WinForms / .NET ------
+*.exe
+*.dll
+*.pdb
+*.cache
+*.ilk
+*.map
+*.exp
+*.lib
+*.sbr
+*.tlb
+*.tli
+*.tlh
+*.tmp
+*.tmp_proj
+*_wpftmp.csproj
+*.stackdump
+*.dbmdl
+*.dbproj.schemaview
+*.jfm
+*.pfx
+*.publishsettings
+orleans.codegen.cs
+
+# ------ Windows ------
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# ------ Archivos de sistema Mac (por si contribuye alguien en Mac) ------
+.DS_Store
+.AppleDouble
+.LSOverride
