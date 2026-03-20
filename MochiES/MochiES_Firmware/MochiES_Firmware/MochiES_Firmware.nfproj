@@ -18,8 +18,12 @@
   </PropertyGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.props" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.props')" />
   <ItemGroup>
+    <Compile Include="Animacionesmochi.cs" />
+    <Compile Include="IDisplayDriver.cs" />
+    <Compile Include="Lcd1602Driver.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Ssd1306Driver.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Iot.Device.Ssd13xx">

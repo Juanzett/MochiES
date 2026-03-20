@@ -5,6 +5,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{9E665AE3-828F-4C94-B99B-55EEF551C135}|MochiES_Firmware\\MochiES_Firmware.nfproj|f:\\program files (x86)\\proyectos a largo plazo\\mochies\\mochies_firmware\\mochies_firmware\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9E665AE3-828F-4C94-B99B-55EEF551C135}|MochiES_Firmware\\MochiES_Firmware.nfproj|solutionrelative:mochies_firmware\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{819DA6C7-639D-4F3A-B273-92DA0363FC22}|MochiES_GifConverter\\MochiES_GifConverter.csproj|f:\\program files (x86)\\proyectos a largo plazo\\mochies\\mochies_firmware\\mochies_gifconverter\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{819DA6C7-639D-4F3A-B273-92DA0363FC22}|MochiES_GifConverter\\MochiES_GifConverter.csproj|solutionrelative:mochies_gifconverter\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +18,20 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs [Dise\u00F1o]",
+              "DocumentMoniker": "F:\\Program Files (x86)\\Proyectos a largo plazo\\MochiES\\MochiES_Firmware\\MochiES_GifConverter\\Form1.cs",
+              "RelativeDocumentMoniker": "MochiES_GifConverter\\Form1.cs",
+              "ToolTip": "F:\\Program Files (x86)\\Proyectos a largo plazo\\MochiES\\MochiES_Firmware\\MochiES_GifConverter\\Form1.cs [Dise\u00F1o]",
+              "RelativeToolTip": "MochiES_GifConverter\\Form1.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-20T00:24:17.722Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
