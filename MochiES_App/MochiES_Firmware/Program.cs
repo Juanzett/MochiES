@@ -23,6 +23,9 @@ using System.Threading;
 using System.Device.I2c;
 using nanoFramework.Hardware.Esp32;
 using MochiES.Drivers;
+using MochiES.UI;
+using MochiES.Conectividad;
+using MochiES.Servicios;
 
 namespace MochiES
 {
@@ -42,12 +45,21 @@ namespace MochiES
         // const int DISPLAY_ADDRESS = 0x3C;
         // const bool USAR_OLED = true;
 
+        // --- Configuración WiFi (CAMBIAR AQUÍ CON TUS CREDENCIALES) ---
+        const string WIFI_SSID = "TU_RED_WIFI";        // ← Cambiar aquí
+        const string WIFI_PASSWORD = "TU_CONTRASEÑA";  // ← Cambiar aquí
+
         // --- Configuración de animación ---
         const int FRAME_DELAY_MS = 80;
         const int PAUSE_BETWEEN_MSGS_MS = 3000;
 
         // --- Pantalla (interfaz genérica) ---
         static IDisplayDriver _display;
+        static BotonesManager _botones;
+        static MenuManager _menu;
+        static ScrollManager _scroll;
+        static WifiManager _wifi;
+        static RelojManager _reloj;
 
         public static void Main()
         {
@@ -82,76 +94,188 @@ namespace MochiES
                 MostrarIntro();
                 Thread.Sleep(2000);
 
-                // Loop principal
-                Console.WriteLine("Iniciando loop de animación...");
-                int contador = 0;
+                // Inicializar gestor de botones
+                Console.WriteLine("\nInicializando botones...");
+                _botones = new BotonesManager(
+                    pinArriba: 34,
+                    pinAbajo: 35,
+                    pinSelect: 32
+                );
+                _botones.BotonPulsado += ManejadorBotonPulsado;
+
+                // Inicializar gestor de menús
+                Console.WriteLine("Inicializando menú...");
+                _menu = new MenuManager(_display);
+
+                // Inicializar gestor de scroll
+                Console.WriteLine("Inicializando scroll...");
+                _scroll = new ScrollManager(_display, velocidadMs: 250);
+
+                // ===== M1: INICIALIZAR WiFi Y RELOJ =====
+                Console.WriteLine("\n===== INICIANDO MÓDULO M1: WiFi + Reloj =====");
+
+                // Inicializar WifiManager
+                _wifi = new WifiManager();
+                _wifi.Inicializar();
+
+                _display.Limpiar();
+                _display.MostrarTextoPorLinea(0, "WiFi: conectando");
+                _display.MostrarTextoPorLinea(1, "...");
+
+                // Intentar conectar a WiFi
+                if (_wifi.ConectarAWifi(WIFI_SSID, WIFI_PASSWORD))
+                {
+                    _display.Limpiar();
+                    _display.MostrarTextoPorLinea(0, "WiFi OK!");
+                    _display.MostrarTextoPorLinea(1, _wifi.DireccionIP);
+                    Thread.Sleep(2000);
+
+                    // Inicializar RelojManager
+                    _reloj = new RelojManager(_display, linea: 0, intervaloMs: 1000);
+
+                    _display.Limpiar();
+                    _display.MostrarTextoPorLinea(0, "Sincronizando");
+                    _display.MostrarTextoPorLinea(1, "hora...");
+
+                    // Sincronizar hora
+                    if (_reloj.SincronizarHora())
+                    {
+                        _display.Limpiar();
+                        _display.MostrarTextoPorLinea(0, "Hora OK!");
+                        _display.MostrarTextoPorLinea(1, _reloj.HoraActual.ToString("HH:mm:ss"));
+                        Thread.Sleep(2000);
+
+                        // Iniciar actualización continua de la hora
+                        _reloj.IniciarActualizacionDisplay();
+
+                        Console.WriteLine("\n✅ M1 completado: WiFi + Reloj funcionando");
+                    }
+                    else
+                    {
+                        _display.Limpiar();
+                        _display.MostrarTextoPorLinea(0, "Error sincronizar");
+                        _display.MostrarTextoPorLinea(1, "hora");
+                        Thread.Sleep(2000);
+                    }
+                }
+                else
+                {
+                    _display.Limpiar();
+                    _display.MostrarTextoPorLinea(0, "WiFi: Error");
+                    _display.MostrarTextoPorLinea(1, "Reintentando...");
+                    Thread.Sleep(2000);
+                }
+
+                // Mostrar menú principal
+                _menu.MostrarModoActual();
+
+                // Loop principal - esperar eventos de botones
+                Console.WriteLine("\n=== Sistema listo. Esperando eventos de botones...\n");
 
                 while (true)
                 {
-                    MostrarMensaje("Linea 1: " + contador, "Linea 2: MochiES");
-                    contador++;
-                    Thread.Sleep(PAUSE_BETWEEN_MSGS_MS);
-
-                    MostrarMensaje("Contador:", contador.ToString());
-                    Thread.Sleep(PAUSE_BETWEEN_MSGS_MS);
-
-                    MostrarMensaje("LCD1602 OK!", "¡Funcionando!");
-                    Thread.Sleep(PAUSE_BETWEEN_MSGS_MS);
+                    Thread.Sleep(100);
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine("ERROR: " + ex.Message);
+                Console.WriteLine($"[ERROR] Excepción en Main: {ex.Message}");
+                Console.WriteLine($"Stack: {ex.StackTrace}");
+
+                if (_display != null)
+                {
+                    _display.Limpiar();
+                    _display.MostrarTextoPorLinea(0, "ERROR CRITICO");
+                    _display.MostrarTextoPorLinea(1, ex.Message.Substring(0, Math.Min(16, ex.Message.Length)));
+                }
+
+                Thread.Sleep(5000);
+            }
+            finally
+            {
+                // Limpiar recursos
+                if (_reloj != null)
+                {
+                    _reloj.DetenerActualizacionDisplay();
+                    _reloj.Dispose();
+                }
+
+                if (_wifi != null)
+                    _wifi.Dispose();
+
+                if (_scroll != null)
+                    _scroll.DetenerScroll();
+
+                if (_botones != null)
+                    _botones.Dispose();
+
+                if (_display != null)
+                    _display.Dispose();
+
+                Console.WriteLine("\n=== MochiES finalizado ===");
             }
         }
 
-        static void MostrarIntro()
+        /// <summary>
+        /// Manejador de eventos para pulsaciones de botones.
+        /// </summary>
+        private static void ManejadorBotonPulsado(object sender, BotonesManager.BotonEventArgs args)
+        {
+            Console.WriteLine($"[EVENT] Botón pulsado: {args.Boton}");
+
+            switch (args.Boton)
+            {
+                case BotonesManager.BotonTipo.Arriba:
+                    _menu.NavigarArriba();
+                    break;
+
+                case BotonesManager.BotonTipo.Abajo:
+                    _menu.NavigarAbajo();
+                    break;
+
+                case BotonesManager.BotonTipo.Select:
+                    _menu.ConfirmarSeleccion();
+                    DemoScrollText();  // Demo temporal
+                    break;
+            }
+        }
+
+        /// <summary>
+        /// Muestra la pantalla de introducción.
+        /// </summary>
+        private static void MostrarIntro()
         {
             _display.Limpiar();
-
-            if (_display.TipoDisplay == "LCD1602")
-            {
-                _display.MostrarTextoPorLinea(0, "Bienvenido!");
-                _display.MostrarTextoPorLinea(1, "MochiES v1.0");
-            }
-            else
-            {
-                // Para OLED, aquí iría dibujo de bitmap
-                _display.MostrarTexto("OLED Ready");
-            }
+            _display.MostrarTextoPorLinea(0, "MOCHIES v1.0");
+            _display.MostrarTextoPorLinea(1, "Inicializando...");
         }
 
-        static void MostrarMensaje(string linea1, string linea2)
+        /// <summary>
+        /// Demo: muestra el scroll de texto cuando se presiona Select.
+        /// (Este método es temporal para pruebas)
+        /// </summary>
+        private static void DemoScrollText()
         {
-            Console.WriteLine(">>> " + linea1 + " | " + linea2);
+            string textoLargo = "Bienvenido a MochiES - Tiny Desk Companion";
+            Console.WriteLine($"\n[DEMO] Mostrando scroll: '{textoLargo}'");
 
-            if (_display.TipoDisplay == "LCD1602")
-            {
-                _display.MostrarTextoPorLinea(0, linea1);
-                _display.MostrarTextoPorLinea(1, linea2);
-            }
-            else
-            {
-                _display.MostrarTexto(linea1 + "\n" + linea2);
-            }
-        }
+            // Pausar actualización del reloj
+            if (_reloj != null)
+                _reloj.DetenerActualizacionDisplay();
 
-        static void ReproducirAnimacion(byte[][] frames, string nombre)
-        {
-            // Esto solo funciona con SSD1306
-            if (_display.TipoDisplay != "SSD1306")
-            {
-                Console.WriteLine("Animaciones bitmap solo en SSD1306");
-                return;
-            }
+            _scroll.IniciarScroll(textoLargo, linea: 1);
 
-            Console.WriteLine("Reproduciendo: " + nombre);
+            // Esperar a que termine el scroll
+            Thread.Sleep(5000);
 
-            for (int i = 0; i < frames.Length; i++)
-            {
-                _display.MostrarFrame(frames[i]);
-                Thread.Sleep(FRAME_DELAY_MS);
-            }
+            _scroll.DetenerScroll();
+
+            // Reanudar actualización del reloj
+            if (_reloj != null)
+                _reloj.IniciarActualizacionDisplay();
+
+            // Volver al menú
+            _menu.MostrarModoActual();
         }
     }
 }

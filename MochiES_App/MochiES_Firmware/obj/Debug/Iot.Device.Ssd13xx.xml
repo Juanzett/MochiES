@@ -1,0 +1,2265 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Iot.Device.Ssd13xx</name>
+    </assembly>
+    <members>
+        <member name="T:Iot.Device.Ssd13xx.Commands.ActivateScroll">
+            <summary>
+            Represents ActivateScroll command.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.ActivateScroll.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Iot.Device.Ssd13xx.Commands.ActivateScroll" /> class.
+            This command starts the motion of scrolling and should only be issued
+            after the scroll setup parameters have been defined by the scrolling
+            setup commands :26h/27h/29h/2Ah. The setting in the last scrolling setup
+            command overwrites the setting in the previous scrolling setup commands.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.ActivateScroll.Id">
+            <summary>
+            The value that represents the command.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.ActivateScroll.GetBytes">
+            <summary>
+            Gets the bytes that represent the command.
+            </summary>
+            <returns>The bytes that represent the command.</returns>
+        </member>
+        <member name="T:Iot.Device.Ssd13xx.Commands.DeactivateScroll">
+            <summary>
+            Represents DeactivateScroll command.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.DeactivateScroll.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Iot.Device.Ssd13xx.Commands.DeactivateScroll" /> class.
+            This command stops the motion of scrolling. After sending 2Eh command to deactivate
+            the scrolling action, the ram data needs to be rewritten.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.DeactivateScroll.Id">
+            <summary>
+            The value that represents the command.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.DeactivateScroll.GetBytes">
+            <summary>
+            Gets the bytes that represent the command.
+            </summary>
+            <returns>The bytes that represent the command.</returns>
+        </member>
+        <member name="T:Iot.Device.Ssd13xx.Commands.ICommand">
+            <summary>
+            Interface for all Ssd13xx commands.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.ICommand.Id">
+            <summary>
+            Gets the value that represents the command.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.ICommand.GetBytes">
+            <summary>
+            Gets the bytes that represent the command.
+            </summary>
+            <returns>The bytes that represent the command.</returns>
+        </member>
+        <member name="T:Iot.Device.Ssd13xx.Commands.ISharedCommand">
+            <summary>
+            Interface for all shared Ssd13xx commands.
+            </summary>
+        </member>
+        <member name="T:Iot.Device.Ssd13xx.Commands.ISsd1306Command">
+            <summary>
+            Interface for all Ssd1306 commands.
+            </summary>
+        </member>
+        <member name="T:Iot.Device.Ssd13xx.Commands.ISsd1327Command">
+            <summary>
+            Interface for all Ssd1327 commands.
+            </summary>
+        </member>
+        <member name="T:Iot.Device.Ssd13xx.Commands.SetContrastControlForBank0">
+            <summary>
+            Represents SetContrastControlForBank0 command.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.SetContrastControlForBank0.#ctor(System.Byte)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Iot.Device.Ssd13xx.Commands.SetContrastControlForBank0" /> class.
+            This command sets the Contrast Setting of the display.
+            The chip has 256 contrast steps from 0 to 255.
+            The segment output current increases as the contrast step value increases.
+            </summary>
+            <param name="contrastSetting">Contrast setting with a range of 0-255.</param>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.SetContrastControlForBank0.Id">
+            <summary>
+            The value that represents the command.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.SetContrastControlForBank0.ContrastSetting">
+            <summary>
+            Gets contrast setting with a range of 0-255.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.SetContrastControlForBank0.GetBytes">
+            <summary>
+            Gets the bytes that represent the command.
+            </summary>
+            <returns>The bytes that represent the command.</returns>
+        </member>
+        <member name="T:Iot.Device.Ssd13xx.Commands.SetDisplayOff">
+            <summary>
+            Represents SetDisplayOff command.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.SetDisplayOff.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Iot.Device.Ssd13xx.Commands.SetDisplayOff" /> class.
+            This command turns the OLED panel display off.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.SetDisplayOff.Id">
+            <summary>
+            The value that represents the command.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.SetDisplayOff.GetBytes">
+            <summary>
+            Gets the bytes that represent the command.
+            </summary>
+            <returns>The bytes that represent the command.</returns>
+        </member>
+        <member name="T:Iot.Device.Ssd13xx.Commands.SetDisplayOn">
+            <summary>
+            Represents SetDisplayOn command.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.SetDisplayOn.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Iot.Device.Ssd13xx.Commands.SetDisplayOn" /> class.
+            This command turns the OLED panel display on.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.SetDisplayOn.Id">
+            <summary>
+            The value that represents the command.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.SetDisplayOn.GetBytes">
+            <summary>
+            Gets the bytes that represent the command.
+            </summary>
+            <returns>The bytes that represent the command.</returns>
+        </member>
+        <member name="T:Iot.Device.Ssd13xx.Commands.SetInverseDisplay">
+            <summary>
+            Represents SetInverseDisplay command.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.SetInverseDisplay.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Iot.Device.Ssd13xx.Commands.SetInverseDisplay" /> class.
+            This command sets the display to be inverse.  Displays a RAM data of 0 indicates an ON pixel.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.SetInverseDisplay.Id">
+            <summary>
+            The value that represents the command.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.SetInverseDisplay.GetBytes">
+            <summary>
+            Gets the bytes that represent the command.
+            </summary>
+            <returns>The bytes that represent the command.</returns>
+        </member>
+        <member name="T:Iot.Device.Ssd13xx.Commands.SetMultiplexRatio">
+            <summary>
+            Represents SetMultiplexRatio command.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.SetMultiplexRatio.#ctor(System.Byte)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Iot.Device.Ssd13xx.Commands.SetMultiplexRatio" /> class.
+            This command switches the default 63 multiplex mode to any multiplex ratio, ranging from 15 to 127.
+            The output pads COM0-COM63 will be switched to the corresponding COM signal.
+            </summary>
+            <param name="multiplexRatio">Multiplex ratio with a range of 15-127.</param>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.SetMultiplexRatio.Id">
+            <summary>
+            The value that represents the command.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.SetMultiplexRatio.MultiplexRatio">
+            <summary>
+            Gets multiplex ratio with a range of 15-63.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.SetMultiplexRatio.GetBytes">
+            <summary>
+            Gets the bytes that represent the command.
+            </summary>
+            <returns>The bytes that represent the command.</returns>
+        </member>
+        <member name="T:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SelectDefaultLinearGrayScaleTable">
+            <summary>
+            Represents SelectDefaultLinearGrayScaleTable command.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SelectDefaultLinearGrayScaleTable.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SelectDefaultLinearGrayScaleTable" /> class.
+            This command reloads the preset linear Gray Scale table.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SelectDefaultLinearGrayScaleTable.Id">
+            <summary>
+            The value that represents the command.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SelectDefaultLinearGrayScaleTable.GetBytes">
+            <summary>
+            Gets the bytes that represent the command.
+            </summary>
+            <returns>The bytes that represent the command.</returns>
+        </member>
+        <member name="T:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetColumnAddress">
+            <summary>
+            Represents SetColumnAddress command.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetColumnAddress.#ctor(System.Byte,System.Byte)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetColumnAddress" /> class.
+            Set column address.
+            Start from 8th column of driver IC. This is 0th column for OLED.
+            End at  (8 + 47)th column. Each column has 2 pixels(or segments).
+            </summary>
+            <param name="startAddress">Column start address with a range of 8-55.</param>
+            <param name="endAddress">Column end address with a range of 8-55.</param>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetColumnAddress.Id">
+            <summary>
+            The value that represents the command.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetColumnAddress.StartAddress">
+            <summary>
+            Gets or sets column start address.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetColumnAddress.EndAddress">
+            <summary>
+            Gets or sets column end address.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetColumnAddress.GetBytes">
+            <summary>
+            Gets the bytes that represent the command.
+            </summary>
+            <returns>The bytes that represent the command.</returns>
+        </member>
+        <member name="T:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetComDeselectVoltageLevel">
+            <summary>
+            Represents SetComDeselectVoltageLevel command.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetComDeselectVoltageLevel.#ctor(System.Byte)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetComDeselectVoltageLevel" /> class.
+            This command sets the high voltage level of common pins, Vcomh.
+            </summary>
+            <param name="level">COM deselect voltage level.</param>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetComDeselectVoltageLevel.Id">
+            <summary>
+            The value that represents the command.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetComDeselectVoltageLevel.Level">
+            <summary>
+            Gets COM deselect voltage level.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetComDeselectVoltageLevel.GetBytes">
+            <summary>
+            Gets the bytes that represent the command.
+            </summary>
+            <returns>The bytes that represent the command.</returns>
+        </member>
+        <member name="T:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetDisplayClockDivideRatioOscillatorFrequency">
+            <summary>
+            Represents SetDisplayClockDivideRatioOscillatorFrequency command.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetDisplayClockDivideRatioOscillatorFrequency.#ctor(System.Byte,System.Byte)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetDisplayClockDivideRatioOscillatorFrequency" /> class.
+            This command sets the divide ratio to generate DCLK (Display Clock) from CLK and
+            programs the oscillator frequency Fosc that is the source of CLK if CLS pin is pulled high.
+            </summary>
+            <param name="displayClockDivideRatio">Display clock divide ratio with a range of 0-15. For more information see device documentations.</param>
+            <param name="oscillatorFrequency">Oscillator frequency with a range of 0-15 in Kilohertz. For more information see device documentations.</param>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetDisplayClockDivideRatioOscillatorFrequency.Id">
+            <summary>
+            The value that represents the command.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetDisplayClockDivideRatioOscillatorFrequency.DisplayClockDivideRatio">
+            <summary>
+            Gets display clock divide ratio with a range of 0-15.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetDisplayClockDivideRatioOscillatorFrequency.OscillatorFrequency">
+            <summary>
+            Gets oscillator frequency with a range of 0-15.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetDisplayClockDivideRatioOscillatorFrequency.GetBytes">
+            <summary>
+            Gets the bytes that represent the command.
+            </summary>
+            <returns>The bytes that represent the command.</returns>
+        </member>
+        <member name="T:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetDisplayOffset">
+            <summary>
+            Represents SetDisplayOffset command.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetDisplayOffset.#ctor(System.Byte)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetDisplayOffset" /> class.
+            This command specifies the mapping of the display start line to one of COM0-COM127
+            (assuming that COM0 is the display start line then the display start line register is equal to 0).
+            </summary>
+            <param name="displayOffset">Display offset with a range of 0-127.</param>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetDisplayOffset.Id">
+            <summary>
+            Gets the value that represents the command.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetDisplayOffset.DisplayOffset">
+            <summary>
+            Gets display offset with a range of 0-127.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetDisplayOffset.GetBytes">
+            <summary>
+            Gets the bytes that represent the command.
+            </summary>
+            <returns>The bytes that represent the command.</returns>
+        </member>
+        <member name="T:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetDisplayStartLine">
+            <summary>
+            Represents SetDisplayStartLine command.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetDisplayStartLine.#ctor(System.Byte)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetDisplayStartLine" /> class.
+            This command sets the Display Start Line register to determine starting address of display RAM,
+            by selecting a value from 0 to 127. With value equal to 0, RAM row 0 is mapped to COM0.
+            With value equal to 1, RAM row 1 is mapped to COM0 and so on.
+            </summary>
+            <param name="displayStartLine">Display start line with a range of 0-63.</param>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetDisplayStartLine.Id">
+            <summary>
+            Gets the value that represents the command.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetDisplayStartLine.DisplayStartLine">
+            <summary>
+            Gets display start line with a range of 0-127.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetDisplayStartLine.GetBytes">
+            <summary>
+            Gets the bytes that represent the command.
+            </summary>
+            <returns>The bytes that represent the command.</returns>
+        </member>
+        <member name="T:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetInternalVddRegulator">
+            <summary>
+            Represents SetInternalVddRegulator command.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetInternalVddRegulator.#ctor(System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetInternalVddRegulator" /> class.
+            This command is used to enable internal Vdd regulator.
+            </summary>
+            <param name="enable">Represents if internal Vdd have to be enabled.</param>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetInternalVddRegulator.Id">
+            <summary>
+            Gets the value that represents the command.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetInternalVddRegulator.UseInternalVdd">
+            <summary>
+            Gets the value that represent if internal or external Vdd should be used.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetInternalVddRegulator.GetBytes">
+            <summary>
+            Gets the bytes that represent the command.
+            </summary>
+            <returns>The bytes that represent the command.</returns>
+        </member>
+        <member name="T:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetNormalDisplay">
+            <summary>
+            Represents SetNormalDisplay command.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetNormalDisplay.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetNormalDisplay" /> class.
+            This command sets the display to be normal.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetNormalDisplay.Id">
+            <summary>
+            The value that represents the command.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetNormalDisplay.GetBytes">
+            <summary>
+            Gets the bytes that represent the command.
+            </summary>
+            <returns>The bytes that represent the command.</returns>
+        </member>
+        <member name="T:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetPhaseLength">
+            <summary>
+            Sets the length of phase 1 and 2 of segment waveform of the driver.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetPhaseLength.#ctor(System.Byte,System.Byte)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetPhaseLength" /> class.
+            </summary>
+            <param name="phase1Period">Phase 1 period.</param>
+            <param name="phase2Period">Phase 2 period.</param>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetPhaseLength.#ctor(System.Byte)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetPhaseLength" /> class.
+            </summary>
+            <param name="phasePeriod">Phase period.</param>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetPhaseLength.Id">
+            <summary>
+            Gets the value that represents the command.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetPhaseLength.Phase1Period">
+            <summary>
+            Gets Phase 1 period with a range of 1-15.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetPhaseLength.Phase2Period">
+            <summary>
+            Gets Phase 2 period with a range of 1-15.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetPhaseLength.PhasePeriod">
+            <summary>
+            Gets Phase period.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetPhaseLength.GetBytes">
+            <summary>
+            Gets the bytes that represent the command.
+            </summary>
+            <returns>The bytes that represent the command.</returns>
+        </member>
+        <member name="T:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetPreChargeVoltage">
+            <summary>
+            Represents SetPreChargeVoltage command.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetPreChargeVoltage.#ctor(System.Byte)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetPreChargeVoltage" /> class.
+            This command sets the first pre-charge voltage (phase 2) level of segment pins.
+            </summary>
+            <param name="level">
+            Pre-charge voltage level.
+            Parameter values between 0b_0000 and 0b_0111 leads to voltage values between 0.2 x Vcc and 0.613 x Vcc Volts.
+            Parameter value 0b_1XXX leads to voltage value equals to Vcomh.
+            </param>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetPreChargeVoltage.Id">
+            <summary>
+            Gets the value that represents the command.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetPreChargeVoltage.Level">
+            <summary>
+            Gets Pre-charge voltage level.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetPreChargeVoltage.GetBytes">
+            <summary>
+            Gets the bytes that represent the command.
+            </summary>
+            <returns>The bytes that represent the command.</returns>
+        </member>
+        <member name="T:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetReMap">
+            <summary>
+            Represents SetReMap command.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetReMap.#ctor(System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetReMap" /> class.
+            Re-map setting in Graphic Display Data RAM(GDDRAM).
+            </summary>
+            <param name="columnAddressRemap">Should remap column addresses.</param>
+            <param name="nibbleRemap">Is nibble remap enabled.</param>
+            <param name="verticalMode">Is vertical mode enabled.</param>
+            <param name="comRemap">Is com remap enabled.</param>
+            <param name="comSplitOddEven">IS com split odd even enabled.</param>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetReMap.Id">
+            <summary>
+            Gets the value that represents the command.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetReMap.Config">
+            <summary>
+            Gets or sets ReMap Config.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetReMap.GetBytes">
+            <summary>
+            Gets the bytes that represent the command.
+            </summary>
+            <returns>The bytes that represent the command.</returns>
+        </member>
+        <member name="T:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetRowAddress">
+            <summary>
+            Represents SetRowAddress command.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetRowAddress.#ctor(System.Byte,System.Byte)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetRowAddress" /> class.
+            Set row address.
+            </summary>
+            <param name="startAddress">Column start address with a range of 0-95.</param>
+            <param name="endAddress">Column end address with a range of 0-95.</param>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetRowAddress.Id">
+            <summary>
+            The value that represents the command.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetRowAddress.StartAddress">
+            <summary>
+            Gets or sets row start address.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetRowAddress.EndAddress">
+            <summary>
+            Gets or sets row end address.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetRowAddress.GetBytes">
+            <summary>
+            Gets the bytes that represent the command.
+            </summary>
+            <returns>The bytes that represent the command.</returns>
+        </member>
+        <member name="T:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetSecondPreChargePeriod">
+            <summary>
+            Represents SetSecondPreChargePeriod command.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetSecondPreChargePeriod.#ctor(System.Byte)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetSecondPreChargePeriod" /> class.
+            This command is used to set the phase 3 second pre-charge period.
+            </summary>
+            <param name="period">Second pre-charge period.</param>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetSecondPreChargePeriod.Id">
+            <summary>
+            Gets the value that represents the command.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetSecondPreChargePeriod.Period">
+            <summary>
+            Gets second Pre-charge period.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetSecondPreChargePeriod.GetBytes">
+            <summary>
+            Gets the bytes that represent the command.
+            </summary>
+            <returns>The bytes that represent the command.</returns>
+        </member>
+        <member name="T:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetSecondPreChargeVsl">
+            <summary>
+            Represents SetSecondPreChargeVsl command.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetSecondPreChargeVsl.#ctor(System.Boolean,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetSecondPreChargeVsl" /> class.
+            This command sets the first pre-charge voltage (phase 2) level of segment pins.
+            </summary>
+            <param name="secondPrecharge">Enable/disable second precharge.</param>
+            <param name="externalVsl"> Switch between internal and external VSL.</param>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetSecondPreChargeVsl.Id">
+            <summary>
+            Gets the value that represents the command.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetSecondPreChargeVsl.Config">
+            <summary>
+            Gets the value that represents configuration.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetSecondPreChargeVsl.GetBytes">
+            <summary>
+            Gets the bytes that represent the command.
+            </summary>
+            <returns>The bytes that represent the command.</returns>
+        </member>
+        <member name="T:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetUnlockDriver">
+            <summary>
+            Represents SetUnlockDriver command.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetUnlockDriver.#ctor(System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetUnlockDriver" /> class.
+            This command sets the display to be normal.
+            </summary>
+            <param name="unlock">Represents if driver have to be unlocked.</param>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetUnlockDriver.Id">
+            <summary>
+            Gets the value that represents the command.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetUnlockDriver.SetUnlock">
+            <summary>
+            Gets the value that represents if driver should be unlocked.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1327Commands.SetUnlockDriver.GetBytes">
+            <summary>
+            Gets the bytes that represent the command.
+            </summary>
+            <returns>The bytes that represent the command.</returns>
+        </member>
+        <member name="T:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.ContinuousVerticalAndHorizontalScrollSetup">
+            <summary>
+            Represents ContinuousVerticalAndHorizontalScrollSetup command.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.ContinuousVerticalAndHorizontalScrollSetup.#ctor(Iot.Device.Ssd13xx.Commands.Ssd1306Commands.ContinuousVerticalAndHorizontalScrollSetup.VerticalHorizontalScrollType,Iot.Device.Ssd13xx.Commands.Ssd1306Commands.PageAddress,Iot.Device.Ssd13xx.Commands.Ssd1306Commands.FrameFrequencyType,Iot.Device.Ssd13xx.Commands.Ssd1306Commands.PageAddress,System.Byte)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.ContinuousVerticalAndHorizontalScrollSetup" /> class.
+            This command consists of 6 consecutive bytes to set up the continuous vertical
+            scroll parameters and determines the scrolling start page, end page, scrolling
+            speed and vertical scrolling offset.
+            </summary>
+            <param name="scrollType">Vertical/Horizontal scroll type.</param>
+            <param name="startPageAddress">Start page address with a range of 0-7.</param>
+            <param name="frameFrequencyType">Frame frequency type with a range of 0-7.</param>
+            <param name="endPageAddress">End page address with a range of 0-7.</param>
+            <param name="verticalScrollingOffset">Vertical scrolling offset with a range of 0-63.</param>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.ContinuousVerticalAndHorizontalScrollSetup.Id">
+            <summary>
+            Gets the value that represents the command.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.ContinuousVerticalAndHorizontalScrollSetup.ScrollType">
+            <summary>
+            Gets Vertical/Horizontal scroll type.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.ContinuousVerticalAndHorizontalScrollSetup.StartPageAddress">
+            <summary>
+            Gets start page address with a range of 0-7.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.ContinuousVerticalAndHorizontalScrollSetup.FrameFrequencyType">
+            <summary>
+            Gets frame frequency type with a range of 0-7.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.ContinuousVerticalAndHorizontalScrollSetup.EndPageAddress">
+            <summary>
+            Gets end page address with a range of 0-7.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.ContinuousVerticalAndHorizontalScrollSetup.VerticalScrollingOffset">
+            <summary>
+            Gets vertical scrolling offset with a range of 0-63.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.ContinuousVerticalAndHorizontalScrollSetup.GetBytes">
+            <summary>
+            Gets the bytes that represent the command.
+            </summary>
+            <returns>The bytes that represent the command.</returns>
+        </member>
+        <member name="T:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.ContinuousVerticalAndHorizontalScrollSetup.VerticalHorizontalScrollType">
+            <summary>
+            Vertical and horizontal scroll.
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.ContinuousVerticalAndHorizontalScrollSetup.VerticalHorizontalScrollType.Right">
+            <summary>
+            Vertical and right horizontal scroll.
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.ContinuousVerticalAndHorizontalScrollSetup.VerticalHorizontalScrollType.Left">
+            <summary>
+            Vertical and left horizontal scroll.
+            </summary>
+        </member>
+        <member name="T:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.EntireDisplayOn">
+            <summary>
+            Represents EntireDisplayOn command.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.EntireDisplayOn.#ctor(System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.EntireDisplayOn" /> class.
+            This command turns the entire display on or off.
+            </summary>
+            <param name="entireDisplay">Resume to RAM content display when FALSE and turns entire dislay on when TRUE.</param>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.EntireDisplayOn.Id">
+            <summary>
+            The value that represents the command.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.EntireDisplayOn.EntireDisplay">
+            <summary>
+            Gets a value indicating whether resume to RAM content display when FALSE and turns entire dislay on when TRUE.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.EntireDisplayOn.GetBytes">
+            <summary>
+            Gets the bytes that represent the command.
+            </summary>
+            <returns>The bytes that represent the command.</returns>
+        </member>
+        <member name="T:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.FrameFrequencyType">
+            <summary>
+            Frame frequency type.
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.FrameFrequencyType.Frames2">
+            <summary>Frames 2.</summary>
+        </member>
+        <member name="F:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.FrameFrequencyType.Frames3">
+            <summary>Frames 3.</summary>
+        </member>
+        <member name="F:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.FrameFrequencyType.Frames4">
+            <summary>Frames 4.</summary>
+        </member>
+        <member name="F:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.FrameFrequencyType.Frames5">
+            <summary>Frames 5.</summary>
+        </member>
+        <member name="F:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.FrameFrequencyType.Frames25">
+            <summary>Frames 25.</summary>
+        </member>
+        <member name="F:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.FrameFrequencyType.Frames64">
+            <summary>Frames 64.</summary>
+        </member>
+        <member name="F:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.FrameFrequencyType.Frames128">
+            <summary>Frames 128.</summary>
+        </member>
+        <member name="F:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.FrameFrequencyType.Frames256">
+            <summary>Frames 256.</summary>
+        </member>
+        <member name="T:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.HorizontalScrollSetup">
+            <summary>
+            Represents HorizontalScrollSetup command.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.HorizontalScrollSetup.#ctor(Iot.Device.Ssd13xx.Commands.Ssd1306Commands.HorizontalScrollSetup.HorizontalScrollType,Iot.Device.Ssd13xx.Commands.Ssd1306Commands.PageAddress,Iot.Device.Ssd13xx.Commands.Ssd1306Commands.FrameFrequencyType,Iot.Device.Ssd13xx.Commands.Ssd1306Commands.PageAddress)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.HorizontalScrollSetup" /> class.
+            This command consists of consecutive bytes to set up the horizontal scroll parameters
+            and determines the scrolling start page, end page and scrolling speed.
+            </summary>
+            <param name="scrollType">Horizontal scroll type.</param>
+            <param name="startPageAddress">Start page address with a range of 0-7.</param>
+            <param name="frameFrequencyType">Frame frequency type with a range of 0-7.</param>
+            <param name="endPageAddress">End page address with a range of 0-7.</param>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.HorizontalScrollSetup.Id">
+            <summary>
+            Gets the value that represents the command.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.HorizontalScrollSetup.ScrollType">
+            <summary>
+            Gets Horizontal scroll type.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.HorizontalScrollSetup.StartPageAddress">
+            <summary>
+            Gets start page address with a range of 0-7.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.HorizontalScrollSetup.FrameFrequencyType">
+            <summary>
+            Gets frame frequency type with a range of 0-7.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.HorizontalScrollSetup.EndPageAddress">
+            <summary>
+            Gets end page address with a range of 0-7.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.HorizontalScrollSetup.GetBytes">
+            <summary>
+            Gets the bytes that represent the command.
+            </summary>
+            <returns>The bytes that represent the command.</returns>
+        </member>
+        <member name="T:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.HorizontalScrollSetup.HorizontalScrollType">
+            <summary>
+            Horizontal scroll type.
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.HorizontalScrollSetup.HorizontalScrollType.Right">
+            <summary>
+            Right horizontal scroll.
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.HorizontalScrollSetup.HorizontalScrollType.Left">
+            <summary>
+            Left horizontal scroll.
+            </summary>
+        </member>
+        <member name="T:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.NoOperation">
+            <summary>
+            Represents NoOperation command.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.NoOperation.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.NoOperation" /> class.
+            This command is a no operation command.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.NoOperation.Id">
+            <summary>
+            The value that represents the command.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.NoOperation.GetBytes">
+            <summary>
+            Gets the bytes that represent the command.
+            </summary>
+            <returns>The bytes that represent the command.</returns>
+        </member>
+        <member name="T:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetChargePump">
+            <summary>
+            Represents SetChargePump command.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetChargePump.#ctor(System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetChargePump" /> class.
+            This command controls the switching capacitor regulator circuit.
+            </summary>
+            <param name="enableChargePump">Determines if charge pump is enabled while the display is on.</param>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetChargePump.Id">
+            <summary>
+            The value that represents the command.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetChargePump.EnableChargePump">
+            <summary>
+            Gets a value indicating whether charge pump is enabled while the display is on.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetChargePump.GetBytes">
+            <summary>
+            Gets the bytes that represent the command.
+            </summary>
+            <returns>The bytes that represent the command.</returns>
+        </member>
+        <member name="T:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetColumnAddress">
+            <summary>
+            Represents SetColumnAddress.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetColumnAddress.#ctor(System.Byte,System.Byte)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetColumnAddress" /> class.
+            This triple byte command specifies column start address and end address of the display data RAM.
+            This command also sets the column address pointer to column start address. This pointer is used
+            to define the current read/write column address in graphic display data RAM. If horizontal address
+            increment mode is enabled by command 20h, after finishing read/write one column data, it is
+            incremented automatically to the next column address. Whenever the column address pointer finishes
+            accessing the end column address, it is reset back to start column address and the row address
+            is incremented to the next row.  This command is only for horizontal or vertical addressing modes.
+            </summary>
+            <param name="startAddress">Column start address with a range of 0-127.</param>
+            <param name="endAddress">Column end address with a range of 0-127.</param>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetColumnAddress.Id">
+            <summary>
+            Gets the value that represents the command.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetColumnAddress.StartAddress">
+            <summary>
+            Gets or sets column start address with a range of 0-127.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetColumnAddress.EndAddress">
+            <summary>
+            Gets or sets column end address with a range of 0-127.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetColumnAddress.GetBytes">
+            <summary>
+            Gets the bytes that represent the command.
+            </summary>
+            <returns>The bytes that represent the command.</returns>
+        </member>
+        <member name="T:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetComOutputScanDirection">
+            <summary>
+            Represents SetComOutputScanDirection command.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetComOutputScanDirection.#ctor(System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetComOutputScanDirection" /> class.
+            This command sets the scan direction of the COM output, allowing layout flexibility
+            in the OLED module design. Additionally, the display will show once this command is
+            issued. For example, if this command is sent during normal display then the graphic
+            display will be vertically flipped immediately.
+            </summary>
+            <param name="normalMode">
+            Scan from COM0 to COM[N –1] when TRUE.
+            Scan from COM[N - 1] to COM0 when FALSE.
+            </param>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetComOutputScanDirection.Id">
+            <summary>
+            The value that represents the command.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetComOutputScanDirection.NormalMode">
+            <summary>
+            Gets or sets a value indicating whether normal mode is enabled.
+            Scan from COM0 to COM[N –1] when TRUE.
+            Scan from COM[N - 1] to COM0 when FALSE.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetComOutputScanDirection.GetBytes">
+            <summary>
+            Gets the bytes that represent the command.
+            </summary>
+            <returns>The bytes that represent the command.</returns>
+        </member>
+        <member name="T:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetComPinsHardwareConfiguration">
+            <summary>
+            Represents SetComPinsHardwareConfiguration command.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetComPinsHardwareConfiguration.#ctor(System.Boolean,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetComPinsHardwareConfiguration" /> class.
+            This command sets the COM signals pin configuration to match the OLED panel hardware layout.
+            </summary>
+            <param name="alternativeComPinConfiguration">Alternative COM pin configuration.</param>
+            <param name="enableLeftRightRemap">Enable left/right remap.</param>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetComPinsHardwareConfiguration.Id">
+            <summary>
+            The value that represents the command.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetComPinsHardwareConfiguration.AlternativeComPinConfiguration">
+            <summary>
+            Gets a value indicating whether alternative COM pin configuration is enabled.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetComPinsHardwareConfiguration.EnableLeftRightRemap">
+            <summary>
+            Gets a value indicating whether enable left/right remap.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetComPinsHardwareConfiguration.GetBytes">
+            <summary>
+            Gets the bytes that represent the command.
+            </summary>
+            <returns>The bytes that represent the command.</returns>
+        </member>
+        <member name="T:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetDisplayClockDivideRatioOscillatorFrequency">
+            <summary>
+            Represents SetDisplayClockDivideRatioOscillatorFrequency command.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetDisplayClockDivideRatioOscillatorFrequency.#ctor(System.Byte,System.Byte)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetDisplayClockDivideRatioOscillatorFrequency" /> class.
+            This command sets the divide ratio to generate DCLK (Display Clock) from CLK and
+            programs the oscillator frequency Fosc that is the source of CLK if CLS pin is pulled high.
+            </summary>
+            <param name="displayClockDivideRatio">Display clock divide ratio with a range of 0-15.</param>
+            <param name="oscillatorFrequency">Oscillator frequency with a range of 0-15.</param>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetDisplayClockDivideRatioOscillatorFrequency.Id">
+            <summary>
+            Gets the value that represents the command.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetDisplayClockDivideRatioOscillatorFrequency.DisplayClockDivideRatio">
+            <summary>
+            Gets display clock divide ratio with a range of 0-15.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetDisplayClockDivideRatioOscillatorFrequency.OscillatorFrequency">
+            <summary>
+            Gets oscillator frequency with a range of 0-15.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetDisplayClockDivideRatioOscillatorFrequency.GetBytes">
+            <summary>
+            Gets the bytes that represent the command.
+            </summary>
+            <returns>The bytes that represent the command.</returns>
+        </member>
+        <member name="T:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetDisplayOffset">
+            <summary>
+            Represents SetDisplayOffset command.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetDisplayOffset.#ctor(System.Byte)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetDisplayOffset" /> class.
+            This command specifies the mapping of the display start line to one of COM0-COM63
+            (assuming that COM0 is the display start line then the display start line register is equal to 0).
+            </summary>
+            <param name="displayOffset">Display offset with a range of 0-63.</param>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetDisplayOffset.Id">
+            <summary>
+            Gets the value that represents the command.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetDisplayOffset.DisplayOffset">
+            <summary>
+            Gets display offset with a range of 0-63.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetDisplayOffset.GetBytes">
+            <summary>
+            Gets the bytes that represent the command.
+            </summary>
+            <returns>The bytes that represent the command.</returns>
+        </member>
+        <member name="T:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetDisplayStartLine">
+            <summary>
+            Represents SetDisplayStartLine command.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetDisplayStartLine.#ctor(System.Byte)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetDisplayStartLine" /> class.
+            This command sets the Display Start Line register to determine starting address of display RAM,
+            by selecting a value from 0 to 63. With value equal to 0, RAM row 0 is mapped to COM0.
+            With value equal to 1, RAM row 1 is mapped to COM0 and so on.
+            </summary>
+            <param name="displayStartLine">Display start line with a range of 0-63.</param>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetDisplayStartLine.Id">
+            <summary>
+            Gets the value that represents the command.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetDisplayStartLine.DisplayStartLine">
+            <summary>
+            Gets display start line with a range of 0-63.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetDisplayStartLine.GetBytes">
+            <summary>
+            Gets the bytes that represent the command.
+            </summary>
+            <returns>The bytes that represent the command.</returns>
+        </member>
+        <member name="T:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetHigherColumnStartAddressForPageAddressingMode">
+            <summary>
+            Represents SetHigherColumnStartAddressForPageAddressingMode command.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetHigherColumnStartAddressForPageAddressingMode.#ctor(System.Byte)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetHigherColumnStartAddressForPageAddressingMode" /> class.
+            This command specifies the higher nibble of the 8-bit column start address for the display
+            data RAM under Page Addressing Mode. The column address will be incremented by each data access.
+            This command is only for page addressing mode.
+            </summary>
+            <param name="higherColumnStartAddress">Higher column start address with a range of 0-15.</param>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetHigherColumnStartAddressForPageAddressingMode.Id">
+            <summary>
+            Gets the value that represents the command.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetHigherColumnStartAddressForPageAddressingMode.HigherColumnStartAddress">
+            <summary>
+            Gets higher column start address with a range of 0-15.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetHigherColumnStartAddressForPageAddressingMode.GetBytes">
+            <summary>
+            Gets the bytes that represent the command.
+            </summary>
+            <returns>The bytes that represent the command.</returns>
+        </member>
+        <member name="T:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetLowerColumnStartAddressForPageAddressingMode">
+            <summary>
+            Represents SetLowerColumnStartAddressForPageAddressingMode command.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetLowerColumnStartAddressForPageAddressingMode.#ctor(System.Byte)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetLowerColumnStartAddressForPageAddressingMode" /> class.
+            This command specifies the lower nibble of the 8-bit column start address for the display
+            data RAM under Page Addressing Mode. The column address will be incremented by each data access.
+            This command is only for page addressing mode.
+            </summary>
+            <param name="lowerColumnStartAddress">Lower column start address with a range of 0-15.</param>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetLowerColumnStartAddressForPageAddressingMode.Id">
+            <summary>
+            Gets the value that represents the command.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetLowerColumnStartAddressForPageAddressingMode.LowerColumnStartAddress">
+            <summary>
+            Gets lower column start address with a range of 0-15.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetLowerColumnStartAddressForPageAddressingMode.GetBytes">
+            <summary>
+            Gets the bytes that represent the command.
+            </summary>
+            <returns>The bytes that represent the command.</returns>
+        </member>
+        <member name="T:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetMemoryAddressingMode">
+            <summary>
+            Represents SetMemoryAddressingMode command.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetMemoryAddressingMode.#ctor(Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetMemoryAddressingMode.AddressingMode)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetMemoryAddressingMode" /> class.
+            This command sets the memory addressing mode.
+            </summary>
+            <param name="memoryAddressingMode">Memory addressing mode.</param>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetMemoryAddressingMode.Id">
+            <summary>
+            Gets the value that represents the command.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetMemoryAddressingMode.MemoryAddressingMode">
+            <summary>
+            Gets memory addressing mode.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetMemoryAddressingMode.GetBytes">
+            <summary>
+            Gets the bytes that represent the command.
+            </summary>
+            <returns>The bytes that represent the command.</returns>
+        </member>
+        <member name="T:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetMemoryAddressingMode.AddressingMode">
+            <summary>
+            Addressing mode.
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetMemoryAddressingMode.AddressingMode.Horizontal">
+            <summary>
+            In horizontal addressing mode, after the display RAM is read/written, the column address
+            pointer is increased automatically by 1. If the column address pointer reaches column end
+            address, the column address pointer is reset to column start address and page address
+            pointer is increased by 1. When both column and page address pointers reach the end address,
+            the pointers are reset to column start address and page start address.
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetMemoryAddressingMode.AddressingMode.Vertical">
+            <summary>
+            In vertical addressing mode, after the display RAM is read/written, the page address pointer
+            is increased automatically by 1. If the page address pointer reaches the page end address,
+            the page address pointer is reset to page start address and column address pointer is
+            increased by 1. When both column and page address pointers reach the end address, the
+            pointers are reset to column start address and page start address.
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetMemoryAddressingMode.AddressingMode.Page">
+            <summary>
+            In page addressing mode, after the display RAM is read/written, the column address pointer
+            is increased automatically by 1. If the column address pointer reaches column end address,
+            the column address pointer is reset to column start address and page address pointer is not
+            changed. Users have to set the new page and column addresses in order to access the next
+            page RAM content.
+            </summary>
+        </member>
+        <member name="T:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetNormalDisplay">
+            <summary>
+            Represents SetNormalDisplay command.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetNormalDisplay.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetNormalDisplay" /> class.
+            This command sets the display to be normal.  Displays a RAM data of 1 indicates an ON pixel.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetNormalDisplay.Id">
+            <summary>
+            The value that represents the command.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetNormalDisplay.GetBytes">
+            <summary>
+            Gets the bytes that represent the command.
+            </summary>
+            <returns>The bytes that represent the command.</returns>
+        </member>
+        <member name="T:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.PageAddress">
+            <summary>
+            Page address.
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.PageAddress.Page0">
+            <summary>Page 0.</summary>
+        </member>
+        <member name="F:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.PageAddress.Page1">
+            <summary>Page 1.</summary>
+        </member>
+        <member name="F:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.PageAddress.Page2">
+            <summary>Page 2.</summary>
+        </member>
+        <member name="F:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.PageAddress.Page3">
+            <summary>Page 3.</summary>
+        </member>
+        <member name="F:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.PageAddress.Page4">
+            <summary>Page 4.</summary>
+        </member>
+        <member name="F:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.PageAddress.Page5">
+            <summary>Page 5.</summary>
+        </member>
+        <member name="F:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.PageAddress.Page6">
+            <summary>Page 6.</summary>
+        </member>
+        <member name="F:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.PageAddress.Page7">
+            <summary>Page 7.</summary>
+        </member>
+        <member name="T:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetPageAddress">
+            <summary>
+            Represents SetPageAddress command.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetPageAddress.#ctor(Iot.Device.Ssd13xx.Commands.Ssd1306Commands.PageAddress,Iot.Device.Ssd13xx.Commands.Ssd1306Commands.PageAddress)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetPageAddress" /> class.
+            This triple byte command specifies page start address and end address of the display data RAM.
+            This command also sets the page address pointer to page start address. This pointer is used to
+            define the current read/write page address in graphic display data RAM. If vertical address
+            increment mode is enabled by command 20h, after finishing read/write one page data, it is
+            incremented automatically to the next page address. Whenever the page address pointer finishes
+            accessing the end page address, it is reset back to start page address.
+            This command is only for horizontal or vertical addressing modes.
+            </summary>
+            <param name="startAddress">Page start address with a range of 0-7.</param>
+            <param name="endAddress">Page end address with a range of 0-7.</param>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetPageAddress.Id">
+            <summary>
+            Gets the value that represents the command.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetPageAddress.StartAddress">
+            <summary>
+            Gets or sets page start address with a range of 0-7.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetPageAddress.EndAddress">
+            <summary>
+            Gets or sets page end address with a range of 0-7.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetPageAddress.GetBytes">
+            <summary>
+            Gets the bytes that represent the command.
+            </summary>
+            <returns>The bytes that represent the command.</returns>
+        </member>
+        <member name="T:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetPageStartAddressForPageAddressingMode">
+            <summary>
+            Represents SetPageStartAddressForPageAddressingMode command.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetPageStartAddressForPageAddressingMode.#ctor(Iot.Device.Ssd13xx.Commands.Ssd1306Commands.PageAddress)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetPageStartAddressForPageAddressingMode" /> class.
+            This command positions the page start address from 0 to 7 in GDDRAM under Page Addressing Mode.
+            </summary>
+            <param name="startAddress">Page start address with a range of 0-7.</param>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetPageStartAddressForPageAddressingMode.Id">
+            <summary>
+            Gets the value that represents the command.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetPageStartAddressForPageAddressingMode.StartAddress">
+            <summary>
+            Gets page start address with a range of 0-7.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetPageStartAddressForPageAddressingMode.GetBytes">
+            <summary>
+            Gets the bytes that represent the command.
+            </summary>
+            <returns>The bytes that represent the command.</returns>
+        </member>
+        <member name="T:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetPreChargePeriod">
+            <summary>
+            Represents SetPreChargePeriod command.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetPreChargePeriod.#ctor(System.Byte,System.Byte)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetPreChargePeriod" /> class.
+            This command is used to set the duration of the pre-charge period.
+            The interval is counted in number of DCLK, where RESET equals 2 DCLKs.
+            </summary>
+            <param name="phase1Period">Phase 1 period with a range of 1-15.</param>
+            <param name="phase2Period">Phase 2 period with a range of 1-15.</param>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetPreChargePeriod.Id">
+            <summary>
+            Gets the value that represents the command.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetPreChargePeriod.Phase1Period">
+            <summary>
+            Gets phase 1 period with a range of 1-15.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetPreChargePeriod.Phase2Period">
+            <summary>
+            Gets phase 2 period with a range of 1-15.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetPreChargePeriod.GetBytes">
+            <summary>
+            Gets the bytes that represent the command.
+            </summary>
+            <returns>The bytes that represent the command.</returns>
+        </member>
+        <member name="T:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetSegmentReMap">
+            <summary>
+            Represents SetSegmentReMap command.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetSegmentReMap.#ctor(System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetSegmentReMap" /> class.
+            This command changes the mapping between the display data column address and the segment driver.
+            It allows flexibility in OLED module design. This command only affects subsequent data input.
+            Data already stored in GDDRAM will have no changes.
+            </summary>
+            <param name="columnAddress127">Column address 0 is mapped to SEG0 when FALSE.
+            Column address 127 is mapped to SEG0 when TRUE.</param>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetSegmentReMap.Id">
+            <summary>
+            The value that represents the command.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetSegmentReMap.ColumnAddress127">
+            <summary>
+            Gets or sets a value indicating whether column address 127 is mapped to SEG0.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetSegmentReMap.GetBytes">
+            <summary>
+            Gets the bytes that represent the command.
+            </summary>
+            <returns>The bytes that represent the command.</returns>
+        </member>
+        <member name="T:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetVcomhDeselectLevel">
+            <summary>
+            Represents SetVcomhDeselectLevel command.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetVcomhDeselectLevel.#ctor(Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetVcomhDeselectLevel.DeselectLevel)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetVcomhDeselectLevel" /> class.
+            This command adjusts the VCOMH regulator output.
+            </summary>
+            <param name="level">Vcomh deselect level.</param>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetVcomhDeselectLevel.Id">
+            <summary>
+            The value that represents the command.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetVcomhDeselectLevel.Level">
+            <summary>
+            Gets vcomh deselect level.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetVcomhDeselectLevel.GetBytes">
+            <summary>
+            Gets the bytes that represent the command.
+            </summary>
+            <returns>The bytes that represent the command.</returns>
+        </member>
+        <member name="T:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetVcomhDeselectLevel.DeselectLevel">
+            <summary>
+            Deselect level.
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetVcomhDeselectLevel.DeselectLevel.Vcc0_65">
+            <summary>
+            Deselect ~0.65 x Vcc.
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetVcomhDeselectLevel.DeselectLevel.Vcc0_77">
+            <summary>
+            Deselect ~0.77 x Vcc.  
+            Default value after reset.
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetVcomhDeselectLevel.DeselectLevel.Vcc0_83">
+            <summary>
+            Deselect ~0.83 x Vcc.
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetVcomhDeselectLevel.DeselectLevel.Vcc1_00">
+            <summary>
+            Deselect ~1.00 x Vcc.
+            </summary>
+        </member>
+        <member name="T:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetVerticalScrollArea">
+            <summary>
+            Represents SetVerticalScrollArea command.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetVerticalScrollArea.#ctor(System.Byte,System.Byte)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetVerticalScrollArea" /> class.
+            This command consists of 3 consecutive bytes to set up the vertical scroll area.
+            For the continuous vertical scroll function(command 29/2Ah), the number of rows
+            that in vertical scrolling can be set smaller or equal to the MUX ratio.
+            </summary>
+            <param name="topFixedAreaRows">Top fixed area rows with a range of 0-63.</param>
+            <param name="scrollAreaRows">Scroll area rows with a range of 0-127.</param>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetVerticalScrollArea.Id">
+            <summary>
+            Gets the value that represents the command.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetVerticalScrollArea.TopFixedAreaRows">
+            <summary>
+            Gets top fixed area rows with a range of 0-63.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetVerticalScrollArea.ScrollAreaRows">
+            <summary>
+            Gets scroll area rows with a range of 0-127.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Commands.Ssd1306Commands.SetVerticalScrollArea.GetBytes">
+            <summary>
+            Gets the bytes that represent the command.
+            </summary>
+            <returns>The bytes that represent the command.</returns>
+        </member>
+        <member name="T:Iot.Device.Ssd13xx.IFont">
+            <summary>
+            Base class for font implementation.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.IFont.Width">
+            <summary>
+            Gets font width.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.IFont.Height">
+            <summary>
+            Gets font height.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.IFont.Item(System.Char)">
+            <summary>
+            Get the binary representation of the ASCII character from the font table.
+            </summary>
+            <param name="character">Character to look up.</param>
+            <returns>Array of bytes representing the binary bit pattern of the character.</returns>
+        </member>
+        <member name="T:Iot.Device.Ssd13xx.DisplayOrientation">
+            <summary>
+            Display orientation. No all display drivers support every orientation.
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ssd13xx.DisplayOrientation.Portrait">
+            <summary>
+            Portrait.
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ssd13xx.DisplayOrientation.Landscape">
+            <summary>
+            Landscape.
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ssd13xx.DisplayOrientation.Portrait180">
+            <summary>
+            Portrait 180.
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ssd13xx.DisplayOrientation.Landscape180">
+            <summary>
+            Landscape 180.
+            </summary>
+        </member>
+        <member name="T:Iot.Device.Ssd13xx.Sh1106">
+            <summary>
+            A single-chip CMOS OLED/PLED driver with controller for organic/polymer
+            light emitting diode dot-matrix graphic display system.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Sh1106.#ctor(System.Device.I2c.I2cDevice,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Iot.Device.Ssd13xx.Sh1106" /> class.
+            A single-chip CMOS OLED/PLED driver with controller for organic/polymer
+            light emitting diode dot-matrix graphic display system.
+            </summary>
+            <param name="i2cDevice">The I2C device used for communication.</param>
+            <param name="resetPin">Reset pin (some displays might be wired to share the microcontroller's
+            reset pin).</param>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Sh1106.#ctor(System.Device.I2c.I2cDevice,Iot.Device.Ssd13xx.Ssd13xx.DisplayResolution,Iot.Device.Ssd13xx.DisplayOrientation,System.Int32,System.Device.Gpio.GpioController,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Iot.Device.Ssd13xx.Sh1106" /> class.
+            A single-chip CMOS OLED/PLED driver with controller for organic/polymer
+            light emitting diode dot-matrix graphic display system.
+            </summary>
+            <param name="i2cDevice">The I2C device used for communication.</param>
+            <param name="res">Display resolution.</param>
+            <param name="orientation">Rotation of the display with reference to the hardware's default orientation.</param>
+            <param name="resetPin">Reset pin (some displays might be wired to share the microcontroller's
+            reset pin).</param>
+            <param name="gpio">Gpio Controller.</param> 
+            <param name="shouldDispose">True to dispose the GpioController.</param>        
+        </member>
+        <member name="T:Iot.Device.Ssd13xx.Ssd1306">
+            <summary>
+            A single-chip CMOS OLED/PLED driver with controller for organic/polymer
+            light emitting diode dot-matrix graphic display system.
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ssd13xx.Ssd1306.DefaultI2cAddress">
+            <summary>
+            Default I2C bus address.
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ssd13xx.Ssd1306.SecondaryI2cAddress">
+            <summary>
+            Secondary I2C bus address.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Ssd1306.#ctor(System.Device.I2c.I2cDevice,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Iot.Device.Ssd13xx.Ssd1306" /> class.
+            A single-chip CMOS OLED/PLED driver with controller for organic/polymer
+            light emitting diode dot-matrix graphic display system.
+            </summary>
+            <param name="i2cDevice">The I2C device used for communication.</param>
+            <param name="resetPin">Reset pin (some displays might be wired to share the microcontroller's
+            reset pin).</param>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Ssd1306.#ctor(System.Device.I2c.I2cDevice,Iot.Device.Ssd13xx.Ssd13xx.DisplayResolution,Iot.Device.Ssd13xx.DisplayOrientation,System.Int32,System.Device.Gpio.GpioController,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Iot.Device.Ssd13xx.Ssd1306" /> class.
+            A single-chip CMOS OLED/PLED driver with controller for organic/polymer
+            light emitting diode dot-matrix graphic display system.
+            </summary>
+            <param name="i2cDevice">The I2C device used for communication.</param>
+            <param name="res">Display resolution.</param>
+            <param name="orientation">Rotation of the display with reference to the hardware's default orientation.</param>
+            <param name="resetPin">Reset pin (some displays might be wired to share the microcontroller's
+            reset pin).</param>
+            <param name="gpio">Gpio Controller.</param> 
+            <param name="shouldDispose">True to dispose the GpioController.</param>        
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Ssd1306.SendCommand(Iot.Device.Ssd13xx.Commands.ISsd1306Command)">
+            <summary>
+            Sends command to the device.
+            </summary>
+            <param name="command">Command being send.</param>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Ssd1306.SendCommand(Iot.Device.Ssd13xx.Commands.ISharedCommand)">
+            <summary>
+            Sends command to the device.
+            </summary>
+            <param name="command">Command being send.</param>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Ssd1306.SendCommand(Iot.Device.Ssd13xx.Commands.ICommand)">
+            <summary>
+            Send a command to the display controller.
+            </summary>
+            <param name="command">The command to send to the display controller.</param>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Ssd1306.Dispose(System.Boolean)">
+            <summary>
+            Internal cleanup.
+            </summary>
+            <param name="disposing">Should dispose managed resources.</param>
+        </member>
+        <member name="T:Iot.Device.Ssd13xx.Ssd1327">
+            <summary>
+            Represents SSD1327 OLED display.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Ssd1327.#ctor(System.Device.I2c.I2cDevice)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Iot.Device.Ssd13xx.Ssd1327" /> class.
+            </summary>
+            <param name="i2cDevice">The I2C device used for communication.</param>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Ssd1327.SetColumnAddress(System.Byte,System.Byte)">
+            <summary>
+            Sets column address.
+            </summary>
+            <param name="startAddress">Start address.</param>
+            <param name="endAddress">End address.</param>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Ssd1327.SetRowAddress(System.Byte,System.Byte)">
+            <summary>
+            Sets row address.
+            </summary>
+            <param name="startAddress">Start address.</param>
+            <param name="endAddress">End address.</param>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Ssd1327.ClearDisplay">
+            <summary>
+            Clears the display.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Ssd1327.SendCommand(System.Byte)">
+            <summary>
+            Send a command to the display controller.
+            </summary>
+            <param name="command">The command to send to the display controller.</param>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Ssd1327.SendCommand(Iot.Device.Ssd13xx.Commands.ISsd1327Command)">
+            <summary>
+            Sends command to the device.
+            </summary>
+            <param name="command">Command being send.</param>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Ssd1327.SendCommand(Iot.Device.Ssd13xx.Commands.ISharedCommand)">
+            <summary>
+            Sends command to the device.
+            </summary>
+            <param name="command">Command being send.</param>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Ssd1327.SendData(System.Byte)">
+            <summary>
+            Send data to the display controller.
+            </summary>
+            <param name="data">The data to send to the display controller.</param>
+        </member>
+        <member name="T:Iot.Device.Ssd13xx.Ssd13xx">
+            <summary>
+            Represents base class for SSD13xx OLED displays.
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ssd13xx.Ssd13xx._oled128x64Init">
+            <summary>
+            Sequence of bytes that should be sent to a 128x64 OLED display to setup the device.
+            First byte is the command byte 0x00.
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ssd13xx.Ssd13xx._oled64x128Init">
+            <summary>
+            Sequence of bytes that should be sent to a 128x64 OLED display to setup the device.
+            First byte is the command byte 0x00.
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ssd13xx.Ssd13xx._oled128x32Init">
+            <summary>
+            Sequence of bytes that should be sent to a 128x32 OLED display to setup the device.
+            First byte is the command byte 0x00.
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ssd13xx.Ssd13xx._oled96x16Init">
+            <summary>
+            Sequence of bytes that should be sent to a 96x16 OLED display to setup the device.
+            First byte is the command byte 0x00.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Ssd13xx._i2cDevice">
+            <summary>
+            Gets or sets underlying I2C device.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Ssd13xx.Orientation">
+            <summary>
+            Gets or sets Screen rotation.  0 = no rotation, 1 = 90, 2 = 180, 3 = 270.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Ssd13xx.Width">
+            <summary>
+            Gets or sets Screen Resolution Width in Pixels.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Ssd13xx.Height">
+            <summary>
+            Gets or sets Screen Resolution Height in Pixels.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Ssd13xx.Pages">
+            <summary>
+            Gets or sets Screen data pages.
+            </summary>
+        </member>
+        <member name="P:Iot.Device.Ssd13xx.Ssd13xx.Font">
+            <summary>
+            Gets or sets Font to use.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Ssd13xx.#ctor(System.Device.I2c.I2cDevice,Iot.Device.Ssd13xx.Ssd13xx.DisplayResolution,Iot.Device.Ssd13xx.DisplayOrientation,System.Int32,System.Device.Gpio.GpioController,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Iot.Device.Ssd13xx.Ssd13xx" /> class.
+            </summary>
+            <param name="i2cDevice">I2C device used to communicate with the device.</param>
+            <param name="resolution">Screen resolution to use for device init.</param>
+            <param name="orientation">Orientation of the displayn.</param>
+            <param name="resetPin">Reset pin (some displays might be wired to share the microcontroller's
+            reset pin).</param>
+            <param name="gpio">Gpio Controller.</param>
+            <param name="shouldDispose">True to dispose the GpioController.</param>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Ssd13xx.InRange(System.UInt32,System.UInt32,System.UInt32)">
+            <summary>
+            Verifies value is within a specific range.
+            </summary>
+            <param name="value">Value to check.</param>
+            <param name="start">Starting value of range.</param>
+            <param name="end">Ending value of range.</param>
+            <returns>Determines if value is within range.</returns>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Ssd13xx.SendCommand(Iot.Device.Ssd13xx.Commands.ISharedCommand)">
+            <summary>
+            Send a command to the display controller.
+            </summary>
+            <param name="command">The command to send to the display controller.</param>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Ssd13xx.SendData(System.SpanByte)">
+            <summary>
+            Send data to the display controller.
+            </summary>
+            <param name="data">The data to send to the display controller.</param>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Ssd13xx.SliceGenericBuffer(System.Int32)">
+            <summary>
+            Acquires span of specific length pointing to the command buffer.
+            If length of the command buffer is too small it will be reallocated.
+            </summary>
+            <param name="length">Requested length.</param>
+            <returns>Span of bytes pointing to the command buffer.</returns>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Ssd13xx.SliceGenericBuffer(System.Int32,System.Int32)">
+            <summary>
+            Acquires span of specific length at specific position in command buffer.
+            If length of the command buffer is too small it will be reallocated.
+            </summary>
+            <param name="start">Start index of the requested span.</param>
+            <param name="length">Requested length.</param>
+            <returns>Span of bytes pointing to the command buffer.</returns>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Ssd13xx.DrawDirectAligned(System.Int32,System.Int32,System.Int32,System.Int32,System.Byte[])">
+            <summary>
+            Copies buffer content directly to display buffer.
+            Y and height must be byte aligned because buffer will 
+            be copied without any logical operations on existing content.
+            </summary>
+            <param name="x">The X coordinate on the screen.</param>
+            <param name="y">The Y coordinate on the screen.</param>
+            <param name="width">Width of buffer content in pixels.</param>
+            <param name="height">Height of buffer content in pixels.</param>
+            <param name="buffer">Data to copy. Buffer size must be equal to height * width / 8.</param>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Ssd13xx.ClearDirectAligned(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Clears portion of display via writing 0x00 directly to display buffer.
+            Y and height must be byte aligned because bytes will 
+            be written without any logical operations on existing content.
+            </summary>
+            <param name="x">The X coordinate on the screen.</param>
+            <param name="y">The Y coordinate on the screen.</param>
+            <param name="width">Width of area in pixels.</param>
+            <param name="height">Height of area in pixels.</param>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Ssd13xx.Swap(System.Int32@,System.Int32@)">
+            <summary>
+            In-place swap of a and b values without the use of a temp variable.
+            </summary>
+            <param name="a">1st variable to be swapped.</param>
+            <param name="b">2nd variable to be swapped.</param>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Ssd13xx.DrawPixel(System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Draws a pixel on the screen.
+            </summary>
+            <param name="x">The X coordinate on the screen.</param>
+            <param name="y">The Y coordinate on the screen.</param>
+            <param name="inverted">Indicates if color to be used turn the pixel on, or leave off.</param>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Ssd13xx.DrawHorizontalLine(System.Int32,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Draws a horizontal line.
+            </summary>
+            <param name="x0">X coordinate starting of the line.</param>
+            <param name="y0">Y coordinate starting of line.</param>
+            <param name="length">Line length.</param>
+            <param name="inverted">Turn the pixel on (true) or off (false).</param>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Ssd13xx.DrawVerticalLine(System.Int32,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Draws a vertical line.
+            </summary>
+            <param name="x0">X coordinate starting of the line.</param>
+            <param name="y0">Y coordinate starting of line.</param>
+            <param name="length">Line length.</param>
+            <param name="inverted">Turn the pixel on (true) or off (false).</param>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Ssd13xx.DrawFilledRectangle(System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Draws a rectangle that is solid/filled.
+            </summary>
+            <param name="x0">X coordinate starting of the top left.</param>
+            <param name="y0">Y coordinate starting of the top left.</param>
+            <param name="width">Width of rectabgle in pixels.</param>
+            <param name="height">Height of rectangle in pixels.</param>
+            <param name="inverted">Turn the pixel on (true) or off (false).</param>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Ssd13xx.DrawBitmap(System.Int32,System.Int32,System.Int32,System.Int32,System.Byte[],System.Byte)">
+            <summary>
+            Displays the  1 bit bit map.
+            </summary>
+            <param name="x">The X coordinate on the screen.</param>
+            <param name="y">The Y coordinate on the screen.</param>
+            <param name="width">Width in bytes.</param>
+            <param name="height">Height in bytes.</param>
+            <param name="bitmap">Bitmap to display.</param>
+            <param name="size">Drawing size, normal = 1, larger use 2,3 etc.</param>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Ssd13xx.DrawString(System.Int32,System.Int32,System.String,System.Byte,System.Boolean)">
+            <summary>
+            Writes a text message on the screen with font in use.
+            </summary>
+            <param name="x">The x pixel-coordinate on the screen.</param>
+            <param name="y">The y pixel-coordinate on the screen.</param>
+            <param name="str">Text string to display.</param>
+            <param name="size">Text size, normal = 1, larger use 2,3, 4 etc.</param>
+            <param name="center">Indicates if text should be centered if possible.</param>
+            <seealso cref="M:Iot.Device.Ssd13xx.Ssd13xx.Write(System.Int32,System.Int32,System.String,System.Byte,System.Boolean)"/>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Ssd13xx.Write(System.Int32,System.Int32,System.String,System.Byte,System.Boolean)">
+            <summary>
+            Writes a text message on the screen with font in use.
+            </summary>
+            <param name="x">The x text-coordinate on the screen.</param>
+            <param name="y">The y text-coordinate on the screen.</param>
+            <param name="str">Text string to display.</param>
+            <param name="size">Text size, normal = 1, larger use 2,3, 4 etc.</param>
+            <param name="center">Indicates if text should be centered if possible.</param>
+            <seealso cref="M:Iot.Device.Ssd13xx.Ssd13xx.DrawString(System.Int32,System.Int32,System.String,System.Byte,System.Boolean)"/>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Ssd13xx.GetTextBytes(System.String)">
+            <summary>
+            Get the bytes to be drawn on the screen for text, from the font.
+            </summary>
+            <param name="text">Strint to be shown on the screen.</param>
+            <returns>The bytes to be drawn using current font.</returns>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Ssd13xx.GetDoubleTextBytes(System.String)">
+            <summary>
+            Get the bytes to be drawn on the screen for double-byte text, from the font
+            e.g. 功夫, カンフー, 쿵후.
+            </summary>
+            <param name="text">Strint to be shown on the screen.</param>
+            <returns>The bytes to be drawn using current font.</returns>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Ssd13xx.Display">
+            <summary>
+            Displays the information on the screen using page mode.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Ssd13xx.ClearScreen">
+            <summary>
+            Clears the screen.
+            </summary>
+        </member>
+        <member name="T:Iot.Device.Ssd13xx.Ssd13xx.DisplayResolution">
+            <summary>
+            Resolution specifier.
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ssd13xx.Ssd13xx.DisplayResolution.OLED128x64">
+            <summary>
+            Option for 128x64 OLED.
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ssd13xx.Ssd13xx.DisplayResolution.OLED128x32">
+            <summary>
+            Option for 128x32 OLED.
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ssd13xx.Ssd13xx.DisplayResolution.OLED96x16">
+            <summary>
+            Option for 96x16 OLED.
+            </summary>
+        </member>
+        <member name="F:Iot.Device.Ssd13xx.Ssd13xx.DisplayResolution.OLED64x128">
+            <summary>
+            Option for 64x128 OLED.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Ssd13xx.SetPageCmd(System.Byte[])">
+            <summary>
+            Set custom page mode output command bytes.
+            <para></para>
+            </summary>
+            <param name="pageCmd">An array of bytes representing the custom page mode command.</param>
+        </member>
+        <member name="F:Iot.Device.Ssd13xx.Ssd13xx._pageCmd">
+            <summary>
+            Page mode output command bytes.
+            </summary>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Ssd13xx.Reset">
+            <summary>
+            Reset display controller.
+            </summary>        
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Ssd13xx.Dispose(System.Boolean)">
+            <summary>
+            Cleanup resources.
+            </summary>
+            <param name="disposing">Should dispose managed resources.</param>
+        </member>
+        <member name="M:Iot.Device.Ssd13xx.Ssd13xx.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="T:System.Collections.Generic.ListByte">
+            <summary>
+            List class for type Byte that has been automatically generated.
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.ListByte.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Collections.Generic.ListByte" /> class.
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.ListByte.#ctor(System.Collections.IEnumerable)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Collections.Generic.ListByte" /> class.
+            Contains elements copied from the specified collection and has sufficient capacity
+            to accommodate the number of elements copied.
+            </summary>
+            <param name="collection">The collection whose elements are copied to the new list.</param>
+            <exception cref="T:System.ArgumentNullException">Collection is null.</exception>
+        </member>
+        <member name="M:System.Collections.Generic.ListByte.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Collections.Generic.ListByte" /> class.
+            Empty and has the specified initial capacity.
+            </summary>
+            <param name="capacity">The number of elements that the new list can initially store.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">Capacity is less than 0.</exception>
+        </member>
+        <member name="P:System.Collections.Generic.ListByte.Item(System.Int32)">
+            <summary>
+            Gets or sets the element at the specified index.
+            </summary>
+            <param name="index">The zero-based index of the element to get or set.</param>
+            <returns>The element at the specified index.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">Index is less than 0. -or- index is equal to or greater than System.Collections.Generic.List.Count.</exception>
+        </member>
+        <member name="P:System.Collections.Generic.ListByte.Count">
+            <summary>
+            Gets the number of elements contained in the System.Collections.Generic.List.
+            </summary>
+        </member>
+        <member name="P:System.Collections.Generic.ListByte.Capacity">
+            <summary>
+            Gets or sets the total number of elements the internal data structure can hold
+            without resizing.
+            </summary>
+            <exception cref="T:System.ArgumentOutOfRangeException">System.Collections.Generic.List.Capacity is set to a value that is less than System.Collections.Generic.List.Count.</exception>
+        </member>
+        <member name="M:System.Collections.Generic.ListByte.Add(System.Byte)">
+            <summary>
+            Adds an object to the end of the System.Collections.Generic.List.
+            </summary>
+            <param name="item">The object to be added to the end of the System.Collections.Generic.List. The value can be null for reference types.</param>
+        </member>
+        <member name="M:System.Collections.Generic.ListByte.AddRange(System.Collections.IEnumerable)">
+            <summary>
+            Adds the elements of the specified collection to the end of the System.Collections.Generic.List.
+            </summary>
+            <param name="collection">The collection whose elements should be added to the end of the System.Collections.Generic.List.
+            The collection itself cannot be null, but it can contain elements that are null, if type byte is a reference type.
+            </param>
+            <exception cref="T:System.ArgumentNullException">Collection is null.</exception>
+        </member>
+        <member name="M:System.Collections.Generic.ListByte.GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through the System.Collections.Generic.List.
+            </summary>
+            <returns>A System.Collections.Generic.List.Enumerator for the System.Collections.Generic.List.</returns>
+        </member>
+        <member name="T:System.Collections.Generic.ListByte.Enumerator">
+            <summary>
+            Enumerates the elements of a System.Collections.Generic.List.
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.ListByte.Enumerator.#ctor(System.Collections.Generic.ListByte)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Collections.Generic.ListByte.Enumerator" /> struct.
+            Create an enumerator of the collection.
+            </summary>
+            <param name="collection">Collection of byte.</param>
+        </member>
+        <member name="P:System.Collections.Generic.ListByte.Enumerator.Current">
+            <summary>
+            Gets the element at the current position of the enumerator.
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.ListByte.Enumerator.Dispose">
+            <summary>
+            Releases all resources used by the System.Collections.Generic.List.Enumerator.
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.ListByte.Enumerator.MoveNext">
+            <summary>
+            Advances the enumerator to the next element of the System.Collections.Generic.List.
+            </summary>
+            <returns>true if the enumerator was successfully advanced to the next element; false if
+            the enumerator has passed the end of the collection.</returns>
+        </member>
+        <member name="M:System.Collections.Generic.ListByte.Enumerator.Reset">
+            <summary>
+            Move back to first position.
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.ListByte.Contains(System.Byte)">
+            <summary>
+            Determines whether an element is in the System.Collections.Generic.List.
+            </summary>
+            <param name="item">The object to locate in the System.Collections.Generic.List. The value can be null for reference types.</param>
+            <returns>true if item is found in the System.Collections.Generic.List; otherwise, false.</returns>
+        </member>
+        <member name="M:System.Collections.Generic.ListByte.CopyTo(System.Byte[],System.Int32)">
+            <summary>
+            Copies the entire System.Collections.Generic.List to a compatible one-dimensional
+            array, starting at the specified index of the target array.
+            </summary>
+            <param name="array">The one-dimensional System.Array that is the destination of the elements copied
+            from System.Collections.Generic.List. The System.Array must have zero-based indexing.</param>
+            <param name="arrayIndex">The zero-based index in array at which copying begins.</param>
+            <exception cref="T:System.ArgumentNullException">Array is null.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">ArrayIndex is less than 0.</exception>
+            <exception cref="T:System.ArgumentException">The number of elements in the source System.Collections.Generic.List is greater
+            than the available space from arrayIndex to the end of the destination array.</exception>
+        </member>
+        <member name="M:System.Collections.Generic.ListByte.CopyTo(System.Byte[])">
+            <summary>
+            Copies the entire System.Collections.Generic.List to a compatible one-dimensional
+            array, starting at the beginning of the target array.
+            </summary>
+            <param name="array">The one-dimensional System.Array that is the destination of the elements copied
+            from System.Collections.Generic.List. The System.Array must have zero-based indexing.</param>
+            <exception cref="T:System.ArgumentNullException">Array is null.</exception>
+            <exception cref="T:System.ArgumentException">The number of elements in the source System.Collections.Generic.List is greater
+            than the number of elements that the destination array can contain.</exception>
+        </member>
+        <member name="M:System.Collections.Generic.ListByte.CopyTo(System.Int32,System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Copies a range of elements from the System.Collections.Generic.List to a compatible
+            one-dimensional array, starting at the specified index of the target array.
+            </summary>
+            <param name="index">The zero-based index in the source System.Collections.Generic.List at which
+            copying begins.</param>
+            <param name="array">The one-dimensional System.Array that is the destination of the elements copied
+            from System.Collections.Generic.List. The System.Array must have zero-based indexing.</param>
+            <param name="arrayIndex">The zero-based index in array at which copying begins.</param>
+            <param name="count">The number of elements to copy.</param>
+            <exception cref="T:System.ArgumentNullException">Array is null.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Index is less than 0. -or- arrayIndex is less than 0. -or- count is less than 0.</exception>
+            <exception cref="T:System.ArgumentException">Index is equal to or greater than the System.Collections.Generic.List.Count
+            of the source System.Collections.Generic.List. -or- The number of elements
+            from index to the end of the source System.Collections.Generic.List is greater than the available space from arrayIndex to the end of the destination array.</exception>
+        </member>
+        <member name="M:System.Collections.Generic.ListByte.GetRange(System.Int32,System.Int32)">
+            <summary>
+            Creates a shallow copy of a range of elements in the source System.Collections.Generic.List.
+            </summary>
+            <param name="index">The zero-based System.Collections.Generic.List index at which the range starts.</param>
+            <param name="count">The number of elements in the range.</param>
+            <returns> A shallow copy of a range of elements in the source System.Collections.Generic.List.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">Index is less than 0. -or- count is less than 0.</exception>
+            <exception cref="T:System.ArgumentException">Index and count do not denote a valid range of elements in the System.Collections.Generic.List.</exception>
+        </member>
+        <member name="M:System.Collections.Generic.ListByte.IndexOf(System.Byte,System.Int32,System.Int32)">
+            <summary>
+            Searches for the specified object and returns the zero-based index of the first
+            occurrence within the range of elements in the System.Collections.Generic.List
+            that starts at the specified index and contains the specified number of elements.
+            </summary>
+            <param name="item">The object to locate in the System.Collections.Generic.List. The value can be null for reference types.</param>
+            <param name="index">The zero-based starting index of the search. 0 (zero) is valid in an empty list.</param>
+            <param name="count">The number of elements in the section to search.</param>
+            <returns>The zero-based index of the first occurrence of item within the range of elements
+            in the System.Collections.Generic.List that starts at index and contains count
+            number of elements, if found; otherwise, -1.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">Index is outside the range of valid indexes for the System.Collections.Generic.List.
+            -or- count is less than 0. -or- index and count do not specify a valid section
+            in the System.Collections.Generic.List.</exception>
+        </member>
+        <member name="M:System.Collections.Generic.ListByte.IndexOf(System.Byte,System.Int32)">
+            <summary>
+            Searches for the specified object and returns the zero-based index of the first
+            occurrence within the range of elements in the System.Collections.Generic.List
+            that extends from the specified index to the last element.
+            </summary>
+            <param name="item">The object to locate in the System.Collections.Generic.List. The value can be null for reference types.</param>
+            <param name="index">The zero-based starting index of the search. 0 (zero) is valid in an empty list.</param>
+            <returns>The zero-based index of the first occurrence of item within the range of elements
+            in the System.Collections.Generic.List that extends from index to the last
+            element, if found; otherwise, -1.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">Index is outside the range of valid indexes for the System.Collections.Generic.List.</exception>
+        </member>
+        <member name="M:System.Collections.Generic.ListByte.IndexOf(System.Byte)">
+            <summary>
+            Searches for the specified object and returns the zero-based index of the first
+            occurrence within the entire System.Collections.Generic.List.
+            </summary>
+            <param name="item">The object to locate in the System.Collections.Generic.List. The value can be null for reference types.</param>
+            <returns>The zero-based index of the first occurrence of item within the entire System.Collections.Generic.List, if found; otherwise, -1.</returns>
+        </member>
+        <member name="M:System.Collections.Generic.ListByte.Insert(System.Int32,System.Byte)">
+            <summary>
+            Inserts an element into the System.Collections.Generic.List at the specified index.
+            </summary>
+            <param name="index">The zero-based index at which item should be inserted.</param>
+            <param name="item">The object to insert. The value can be null for reference types.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">Index is less than 0. -or- index is greater than System.Collections.Generic.List.Count.</exception>
+        </member>
+        <member name="M:System.Collections.Generic.ListByte.InsertRange(System.Int32,System.Collections.IEnumerable)">
+            <summary>
+            Inserts the elements of a collection into the System.Collections.Generic.List at the specified index.
+            </summary>
+            <param name="index">The zero-based index at which the new elements should be inserted.</param>
+            <param name="collection">The collection whose elements should be inserted into the System.Collections.Generic.List. The collection itself cannot be null, but it can contain elements that are null, if type byte is a reference type.</param>
+            <exception cref="T:System.ArgumentNullException">Collection is null.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Index is less than 0. -or- index is greater than System.Collections.Generic.List.Count.</exception>
+        </member>
+        <member name="M:System.Collections.Generic.ListByte.LastIndexOf(System.Byte)">
+            <summary>
+            Searches for the specified object and returns the zero-based index of the last
+            occurrence within the entire System.Collections.Generic.List.
+            </summary>
+            <param name="item">The object to locate in the System.Collections.Generic.List. The value can be null for reference types.</param>
+            <returns>The zero-based index of the last occurrence of item within the entire the System.Collections.Generic.List, if found; otherwise, -1.</returns>
+        </member>
+        <member name="M:System.Collections.Generic.ListByte.LastIndexOf(System.Byte,System.Int32)">
+            <summary>
+            Searches for the specified object and returns the zero-based index of the last
+            occurrence within the range of elements in the System.Collections.Generic.List
+            that extends from the first element to the specified index.
+            </summary>
+            <param name="item">The object to locate in the System.Collections.Generic.List. The value can be null for reference types.</param>
+            <param name="index">The zero-based starting index of the backward search.</param>
+            <returns>The zero-based index of the last occurrence of item within the range of elements
+            in the System.Collections.Generic.List that extends from the first element
+            to index, if found; otherwise, -1.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">Index is outside the range of valid indexes for the System.Collections.Generic.List.</exception>
+        </member>
+        <member name="M:System.Collections.Generic.ListByte.LastIndexOf(System.Byte,System.Int32,System.Int32)">
+            <summary>
+            Searches for the specified object and returns the zero-based index of the last
+            occurrence within the range of elements in the System.Collections.Generic.List
+            that contains the specified number of elements and ends at the specified index.
+            </summary>
+            <param name="item">The object to locate in the System.Collections.Generic.List. The value can be null for reference types.</param>
+            <param name="index">The zero-based starting index of the backward search.</param>
+            <param name="count">The number of elements in the section to search.</param>
+            <returns>The zero-based index of the last occurrence of item within the range of elements
+            in the System.Collections.Generic.List that contains count number of elements
+            and ends at index, if found; otherwise, -1.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">Index is outside the range of valid indexes for the System.Collections.Generic.List. -or- count is less than 0. -or- index and count do not specify a valid section in the System.Collections.Generic.List.</exception>
+        </member>
+        <member name="M:System.Collections.Generic.ListByte.Remove(System.Byte)">
+            <summary>
+            Removes the first occurrence of a specific object from the System.Collections.Generic.List.
+            </summary>
+            <param name="item">The object to remove from the System.Collections.Generic.List. The value can be null for reference types.</param>
+            <returns>True if item is successfully removed; otherwise, false. This method also returns
+            false if item was not found in the System.Collections.Generic.List.</returns>
+        </member>
+        <member name="M:System.Collections.Generic.ListByte.RemoveAt(System.Int32)">
+            <summary>
+            Removes the element at the specified index of the System.Collections.Generic.List.
+            </summary>
+            <param name="index">The zero-based index of the element to remove.</param>
+        </member>
+        <member name="M:System.Collections.Generic.ListByte.RemoveRange(System.Int32,System.Int32)">
+            <summary>
+            Removes a range of elements from the System.Collections.Generic.List.
+            </summary>
+            <param name="index">The zero-based starting index of the range of elements to remove.</param>
+            <param name="count">The number of elements to remove.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">Index is less than 0. -or- count is less than 0.</exception>
+            <exception cref="T:System.ArgumentException">Index and count do not denote a valid range of elements in the System.Collections.Generic.List.</exception>
+        </member>
+        <member name="M:System.Collections.Generic.ListByte.ToArray">
+            <summary>
+            Copies the elements of the System.Collections.Generic.List to a new array.
+            </summary>
+            <returns>
+            An array containing copies of the elements of the System.Collections.Generic.List.
+            </returns>
+        </member>
+    </members>
+</doc>
