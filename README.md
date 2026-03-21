@@ -200,7 +200,6 @@ MochiES/
 ├── MochiES_Configurador/           ← Configura y flashea el dispositivo (WinForms)
 │   └── FormFlasher.cs
 │
-├── INSTRUCCIONES.cs                ← Contexto del proyecto para IAs (Claude/Copilot)
 ├── .gitignore
 └── README.md
 ```
