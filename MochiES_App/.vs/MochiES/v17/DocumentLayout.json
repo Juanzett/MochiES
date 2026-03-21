@@ -3,12 +3,48 @@
   "WorkspaceRootPath": "F:\\Program Files (x86)\\Proyectos a largo plazo\\MochiProyect\\MochiES\\MochiES_App\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9E665AE3-828F-4C94-B99B-55EEF551C135}|MochiES_Firmware\\MochiES_Firmware.nfproj|f:\\program files (x86)\\proyectos a largo plazo\\mochiproyect\\mochies\\mochies_app\\mochies_firmware\\ui\\menumanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9E665AE3-828F-4C94-B99B-55EEF551C135}|MochiES_Firmware\\MochiES_Firmware.nfproj|solutionrelative:mochies_firmware\\ui\\menumanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CE9FF9D5-91D8-4EA6-B69A-00CA75272417}|MochiES_Configurador\\MochiES_Configurador.csproj|f:\\program files (x86)\\proyectos a largo plazo\\mochiproyect\\mochies\\mochies_app\\mochies_configurador\\formmonitorlogs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE9FF9D5-91D8-4EA6-B69A-00CA75272417}|MochiES_Configurador\\MochiES_Configurador.csproj|solutionrelative:mochies_configurador\\formmonitorlogs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE9FF9D5-91D8-4EA6-B69A-00CA75272417}|MochiES_Configurador\\MochiES_Configurador.csproj|f:\\program files (x86)\\proyectos a largo plazo\\mochiproyect\\mochies\\mochies_app\\mochies_configurador\\monitorlogs\\formmonitorlogs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{CE9FF9D5-91D8-4EA6-B69A-00CA75272417}|MochiES_Configurador\\MochiES_Configurador.csproj|solutionrelative:mochies_configurador\\monitorlogs\\formmonitorlogs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE9FF9D5-91D8-4EA6-B69A-00CA75272417}|MochiES_Configurador\\MochiES_Configurador.csproj|f:\\program files (x86)\\proyectos a largo plazo\\mochiproyect\\mochies\\mochies_app\\mochies_configurador\\formprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE9FF9D5-91D8-4EA6-B69A-00CA75272417}|MochiES_Configurador\\MochiES_Configurador.csproj|solutionrelative:mochies_configurador\\formprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE9FF9D5-91D8-4EA6-B69A-00CA75272417}|MochiES_Configurador\\MochiES_Configurador.csproj|f:\\program files (x86)\\proyectos a largo plazo\\mochiproyect\\mochies\\mochies_app\\mochies_configurador\\formpruebaspiloto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE9FF9D5-91D8-4EA6-B69A-00CA75272417}|MochiES_Configurador\\MochiES_Configurador.csproj|solutionrelative:mochies_configurador\\formpruebaspiloto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE9FF9D5-91D8-4EA6-B69A-00CA75272417}|MochiES_Configurador\\MochiES_Configurador.csproj|F:\\Program Files (x86)\\Proyectos a largo plazo\\MochiProyect\\MochiES\\MochiES_App\\mochies_configurador\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE9FF9D5-91D8-4EA6-B69A-00CA75272417}|MochiES_Configurador\\MochiES_Configurador.csproj|solutionrelative:mochies_configurador\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE9FF9D5-91D8-4EA6-B69A-00CA75272417}|MochiES_Configurador\\MochiES_Configurador.csproj|f:\\program files (x86)\\proyectos a largo plazo\\mochiproyect\\mochies\\mochies_app\\mochies_configurador\\monitorlogs\\logparser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE9FF9D5-91D8-4EA6-B69A-00CA75272417}|MochiES_Configurador\\MochiES_Configurador.csproj|solutionrelative:mochies_configurador\\monitorlogs\\logparser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE9FF9D5-91D8-4EA6-B69A-00CA75272417}|MochiES_Configurador\\MochiES_Configurador.csproj|f:\\program files (x86)\\proyectos a largo plazo\\mochiproyect\\mochies\\mochies_app\\mochies_configurador\\pruebaspiloto\\formflasher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{CE9FF9D5-91D8-4EA6-B69A-00CA75272417}|MochiES_Configurador\\MochiES_Configurador.csproj|solutionrelative:mochies_configurador\\pruebaspiloto\\formflasher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE9FF9D5-91D8-4EA6-B69A-00CA75272417}|MochiES_Configurador\\MochiES_Configurador.csproj|f:\\program files (x86)\\proyectos a largo plazo\\mochiproyect\\mochies\\mochies_app\\mochies_configurador\\pruebaspiloto\\serialportmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE9FF9D5-91D8-4EA6-B69A-00CA75272417}|MochiES_Configurador\\MochiES_Configurador.csproj|solutionrelative:mochies_configurador\\pruebaspiloto\\serialportmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE9FF9D5-91D8-4EA6-B69A-00CA75272417}|MochiES_Configurador\\MochiES_Configurador.csproj|f:\\program files (x86)\\proyectos a largo plazo\\mochiproyect\\mochies\\mochies_app\\mochies_configurador\\flasher\\nanoffwrapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE9FF9D5-91D8-4EA6-B69A-00CA75272417}|MochiES_Configurador\\MochiES_Configurador.csproj|solutionrelative:mochies_configurador\\flasher\\nanoffwrapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9E665AE3-828F-4C94-B99B-55EEF551C135}|MochiES_Firmware\\MochiES_Firmware.nfproj|f:\\program files (x86)\\proyectos a largo plazo\\mochiproyect\\mochies\\mochies_app\\mochies_firmware\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9E665AE3-828F-4C94-B99B-55EEF551C135}|MochiES_Firmware\\MochiES_Firmware.nfproj|solutionrelative:mochies_firmware\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9E665AE3-828F-4C94-B99B-55EEF551C135}|MochiES_Firmware\\MochiES_Firmware.nfproj|f:\\program files (x86)\\proyectos a largo plazo\\mochiproyect\\mochies\\mochies_app\\mochies_firmware\\ui\\menumanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9E665AE3-828F-4C94-B99B-55EEF551C135}|MochiES_Firmware\\MochiES_Firmware.nfproj|solutionrelative:mochies_firmware\\ui\\menumanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9E665AE3-828F-4C94-B99B-55EEF551C135}|MochiES_Firmware\\MochiES_Firmware.nfproj|f:\\program files (x86)\\proyectos a largo plazo\\mochiproyect\\mochies\\mochies_app\\mochies_firmware\\servicios\\relojmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -79,10 +115,6 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:INSTRUCCIONES.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CE9FF9D5-91D8-4EA6-B69A-00CA75272417}|MochiES_Configurador\\MochiES_Configurador.csproj|F:\\Program Files (x86)\\Proyectos a largo plazo\\MochiProyect\\MochiES\\MochiES_App\\mochies_configurador\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE9FF9D5-91D8-4EA6-B69A-00CA75272417}|MochiES_Configurador\\MochiES_Configurador.csproj|solutionrelative:mochies_configurador\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{CE9FF9D5-91D8-4EA6-B69A-00CA75272417}|MochiES_Configurador\\MochiES_Configurador.csproj|F:\\Program Files (x86)\\Proyectos a largo plazo\\MochiProyect\\MochiES\\MochiES_App\\mochies_configurador\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{CE9FF9D5-91D8-4EA6-B69A-00CA75272417}|MochiES_Configurador\\MochiES_Configurador.csproj|solutionrelative:mochies_configurador\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
@@ -114,23 +146,113 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "readme.txt",
-              "DocumentMoniker": "F:\\Program Files (x86)\\Proyectos a largo plazo\\MochiProyect\\MochiES\\MochiES_App\\packages\\nanoFramework.System.Collections.1.5.67\\readme.txt",
-              "RelativeDocumentMoniker": "packages\\nanoFramework.System.Collections.1.5.67\\readme.txt",
-              "ToolTip": "F:\\Program Files (x86)\\Proyectos a largo plazo\\MochiProyect\\MochiES\\MochiES_App\\packages\\nanoFramework.System.Collections.1.5.67\\readme.txt",
-              "RelativeToolTip": "packages\\nanoFramework.System.Collections.1.5.67\\readme.txt",
+              "DocumentIndex": 2,
+              "Title": "FormPrincipal.cs",
+              "DocumentMoniker": "F:\\Program Files (x86)\\Proyectos a largo plazo\\MochiProyect\\MochiES\\MochiES_App\\MochiES_Configurador\\FormPrincipal.cs",
+              "RelativeDocumentMoniker": "MochiES_Configurador\\FormPrincipal.cs",
+              "ToolTip": "F:\\Program Files (x86)\\Proyectos a largo plazo\\MochiProyect\\MochiES\\MochiES_App\\MochiES_Configurador\\FormPrincipal.cs",
+              "RelativeToolTip": "MochiES_Configurador\\FormPrincipal.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-21T18:23:48.908Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FormPruebasPiloto.cs",
+              "DocumentMoniker": "F:\\Program Files (x86)\\Proyectos a largo plazo\\MochiProyect\\MochiES\\MochiES_App\\MochiES_Configurador\\FormPruebasPiloto.cs",
+              "RelativeDocumentMoniker": "MochiES_Configurador\\FormPruebasPiloto.cs",
+              "ToolTip": "F:\\Program Files (x86)\\Proyectos a largo plazo\\MochiProyect\\MochiES\\MochiES_App\\MochiES_Configurador\\FormPruebasPiloto.cs",
+              "RelativeToolTip": "MochiES_Configurador\\FormPruebasPiloto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAABAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-21T18:23:38.124Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FormMonitorLogs.cs",
+              "DocumentMoniker": "F:\\Program Files (x86)\\Proyectos a largo plazo\\MochiProyect\\MochiES\\MochiES_App\\MochiES_Configurador\\FormMonitorLogs.cs",
+              "RelativeDocumentMoniker": "MochiES_Configurador\\FormMonitorLogs.cs",
+              "ToolTip": "F:\\Program Files (x86)\\Proyectos a largo plazo\\MochiProyect\\MochiES\\MochiES_App\\MochiES_Configurador\\FormMonitorLogs.cs",
+              "RelativeToolTip": "MochiES_Configurador\\FormMonitorLogs.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAH4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-21T18:23:25.45Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "LogParser.cs",
+              "DocumentMoniker": "F:\\Program Files (x86)\\Proyectos a largo plazo\\MochiProyect\\MochiES\\MochiES_App\\MochiES_Configurador\\MonitorLogs\\LogParser.cs",
+              "RelativeDocumentMoniker": "MochiES_Configurador\\MonitorLogs\\LogParser.cs",
+              "ToolTip": "F:\\Program Files (x86)\\Proyectos a largo plazo\\MochiProyect\\MochiES\\MochiES_App\\MochiES_Configurador\\MonitorLogs\\LogParser.cs",
+              "RelativeToolTip": "MochiES_Configurador\\MonitorLogs\\LogParser.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2026-03-21T17:39:14.814Z"
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-21T18:22:59.149Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FormMonitorLogs.cs [Dise\u00F1o]",
+              "DocumentMoniker": "F:\\Program Files (x86)\\Proyectos a largo plazo\\MochiProyect\\MochiES\\MochiES_App\\MochiES_Configurador\\MonitorLogs\\FormMonitorLogs.cs",
+              "RelativeDocumentMoniker": "MochiES_Configurador\\MonitorLogs\\FormMonitorLogs.cs",
+              "ToolTip": "F:\\Program Files (x86)\\Proyectos a largo plazo\\MochiProyect\\MochiES\\MochiES_App\\MochiES_Configurador\\MonitorLogs\\FormMonitorLogs.cs [Dise\u00F1o]",
+              "RelativeToolTip": "MochiES_Configurador\\MonitorLogs\\FormMonitorLogs.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-21T18:22:22.296Z",
+              "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
+              "Title": "FormFlasher.cs [Dise\u00F1o]",
+              "DocumentMoniker": "F:\\Program Files (x86)\\Proyectos a largo plazo\\MochiProyect\\MochiES\\MochiES_App\\MochiES_Configurador\\PruebasPiloto\\FormFlasher.cs",
+              "RelativeDocumentMoniker": "MochiES_Configurador\\PruebasPiloto\\FormFlasher.cs",
+              "ToolTip": "F:\\Program Files (x86)\\Proyectos a largo plazo\\MochiProyect\\MochiES\\MochiES_App\\MochiES_Configurador\\PruebasPiloto\\FormFlasher.cs [Dise\u00F1o]",
+              "RelativeToolTip": "MochiES_Configurador\\PruebasPiloto\\FormFlasher.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-21T18:22:02.193Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "SerialPortManager.cs",
+              "DocumentMoniker": "F:\\Program Files (x86)\\Proyectos a largo plazo\\MochiProyect\\MochiES\\MochiES_App\\MochiES_Configurador\\PruebasPiloto\\SerialPortManager.cs",
+              "RelativeDocumentMoniker": "MochiES_Configurador\\PruebasPiloto\\SerialPortManager.cs",
+              "ToolTip": "F:\\Program Files (x86)\\Proyectos a largo plazo\\MochiProyect\\MochiES\\MochiES_App\\MochiES_Configurador\\PruebasPiloto\\SerialPortManager.cs",
+              "RelativeToolTip": "MochiES_Configurador\\PruebasPiloto\\SerialPortManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-21T18:21:41.166Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "NanoffWrapper.cs",
+              "DocumentMoniker": "F:\\Program Files (x86)\\Proyectos a largo plazo\\MochiProyect\\MochiES\\MochiES_App\\MochiES_Configurador\\Flasher\\NanoffWrapper.cs",
+              "RelativeDocumentMoniker": "MochiES_Configurador\\Flasher\\NanoffWrapper.cs",
+              "ToolTip": "F:\\Program Files (x86)\\Proyectos a largo plazo\\MochiProyect\\MochiES\\MochiES_App\\MochiES_Configurador\\Flasher\\NanoffWrapper.cs",
+              "RelativeToolTip": "MochiES_Configurador\\Flasher\\NanoffWrapper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-21T18:21:10Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "BotonesManager.cs",
               "DocumentMoniker": "F:\\Program Files (x86)\\Proyectos a largo plazo\\MochiProyect\\MochiES\\MochiES_App\\MochiES_Firmware\\UI\\BotonesManager.cs",
               "RelativeDocumentMoniker": "MochiES_Firmware\\UI\\BotonesManager.cs",
@@ -142,7 +264,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 14,
               "Title": "ScrollManager.cs",
               "DocumentMoniker": "F:\\Program Files (x86)\\Proyectos a largo plazo\\MochiProyect\\MochiES\\MochiES_App\\MochiES_Firmware\\UI\\ScrollManager.cs",
               "RelativeDocumentMoniker": "MochiES_Firmware\\UI\\ScrollManager.cs",
@@ -154,7 +276,32 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "F:\\Program Files (x86)\\Proyectos a largo plazo\\MochiProyect\\MochiES\\MochiES_App\\MochiES_Configurador\\Program.cs",
+              "RelativeDocumentMoniker": "MochiES_Configurador\\Program.cs",
+              "ToolTip": "F:\\Program Files (x86)\\Proyectos a largo plazo\\MochiProyect\\MochiES\\MochiES_App\\MochiES_Configurador\\Program.cs",
+              "RelativeToolTip": "MochiES_Configurador\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-20T02:34:07.453Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "readme.txt",
+              "DocumentMoniker": "F:\\Program Files (x86)\\Proyectos a largo plazo\\MochiProyect\\MochiES\\MochiES_App\\packages\\nanoFramework.System.Collections.1.5.67\\readme.txt",
+              "RelativeDocumentMoniker": "packages\\nanoFramework.System.Collections.1.5.67\\readme.txt",
+              "ToolTip": "F:\\Program Files (x86)\\Proyectos a largo plazo\\MochiProyect\\MochiES\\MochiES_App\\packages\\nanoFramework.System.Collections.1.5.67\\readme.txt",
+              "RelativeToolTip": "packages\\nanoFramework.System.Collections.1.5.67\\readme.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-03-21T17:39:14.814Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "MenuManager.cs",
               "DocumentMoniker": "F:\\Program Files (x86)\\Proyectos a largo plazo\\MochiProyect\\MochiES\\MochiES_App\\MochiES_Firmware\\UI\\MenuManager.cs",
               "RelativeDocumentMoniker": "MochiES_Firmware\\UI\\MenuManager.cs",
@@ -167,7 +314,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 11,
               "Title": "RelojManager.cs",
               "DocumentMoniker": "F:\\Program Files (x86)\\Proyectos a largo plazo\\MochiProyect\\MochiES\\MochiES_App\\MochiES_Firmware\\Servicios\\RelojManager.cs",
               "RelativeDocumentMoniker": "MochiES_Firmware\\Servicios\\RelojManager.cs",
@@ -179,7 +326,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 19,
               "Title": "MotorManager.cs",
               "DocumentMoniker": "F:\\Program Files (x86)\\Proyectos a largo plazo\\MochiProyect\\MochiES\\MochiES_App\\MochiES_Firmware\\Motores\\MotorManager.cs",
               "RelativeDocumentMoniker": "MochiES_Firmware\\Motores\\MotorManager.cs",
@@ -191,7 +338,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 12,
               "Title": "WifiManager.cs",
               "DocumentMoniker": "F:\\Program Files (x86)\\Proyectos a largo plazo\\MochiProyect\\MochiES\\MochiES_App\\MochiES_Firmware\\Conectividad\\WifiManager.cs",
               "RelativeDocumentMoniker": "MochiES_Firmware\\Conectividad\\WifiManager.cs",
@@ -203,19 +350,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 9,
               "Title": "Program.cs",
               "DocumentMoniker": "F:\\Program Files (x86)\\Proyectos a largo plazo\\MochiProyect\\MochiES\\MochiES_App\\MochiES_Firmware\\Program.cs",
               "RelativeDocumentMoniker": "MochiES_Firmware\\Program.cs",
               "ToolTip": "F:\\Program Files (x86)\\Proyectos a largo plazo\\MochiProyect\\MochiES\\MochiES_App\\MochiES_Firmware\\Program.cs",
               "RelativeToolTip": "MochiES_Firmware\\Program.cs",
-              "ViewState": "AgIAAJgAAAAAAAAAAADgv6kAAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAACMBAAAAAAAAAAAAwDgBAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-20T00:22:49.568Z"
+              "WhenOpened": "2026-03-20T00:22:49.568Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 18,
               "Title": "ClimaManager.cs",
               "DocumentMoniker": "F:\\Program Files (x86)\\Proyectos a largo plazo\\MochiProyect\\MochiES\\MochiES_App\\MochiES_Firmware\\Servicios\\ClimaManager.cs",
               "RelativeDocumentMoniker": "MochiES_Firmware\\Servicios\\ClimaManager.cs",
@@ -227,7 +375,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 17,
               "Title": "IAManager.cs",
               "DocumentMoniker": "F:\\Program Files (x86)\\Proyectos a largo plazo\\MochiProyect\\MochiES\\MochiES_App\\MochiES_Firmware\\Servicios\\IAManager.cs",
               "RelativeDocumentMoniker": "MochiES_Firmware\\Servicios\\IAManager.cs",
@@ -239,7 +387,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 16,
               "Title": "AnimacionesLcd.cs",
               "DocumentMoniker": "F:\\Program Files (x86)\\Proyectos a largo plazo\\MochiProyect\\MochiES\\MochiES_App\\MochiES_Firmware\\UI\\AnimacionesLcd.cs",
               "RelativeDocumentMoniker": "MochiES_Firmware\\UI\\AnimacionesLcd.cs",
@@ -251,7 +399,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 20,
               "Title": "BleManager.cs",
               "DocumentMoniker": "F:\\Program Files (x86)\\Proyectos a largo plazo\\MochiProyect\\MochiES\\MochiES_App\\MochiES_Firmware\\Conectividad\\BleManager.cs",
               "RelativeDocumentMoniker": "MochiES_Firmware\\Conectividad\\BleManager.cs",
@@ -263,7 +411,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 21,
               "Title": "SpeakerManager.cs",
               "DocumentMoniker": "F:\\Program Files (x86)\\Proyectos a largo plazo\\MochiProyect\\MochiES\\MochiES_App\\MochiES_Firmware\\Audio\\SpeakerManager.cs",
               "RelativeDocumentMoniker": "MochiES_Firmware\\Audio\\SpeakerManager.cs",
@@ -275,7 +423,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 22,
               "Title": "MicManager.cs",
               "DocumentMoniker": "F:\\Program Files (x86)\\Proyectos a largo plazo\\MochiProyect\\MochiES\\MochiES_App\\MochiES_Firmware\\Audio\\MicManager.cs",
               "RelativeDocumentMoniker": "MochiES_Firmware\\Audio\\MicManager.cs",
@@ -287,7 +435,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 27,
               "Title": "INSTRUCCIONES.cs",
               "DocumentMoniker": "F:\\Program Files (x86)\\Proyectos a largo plazo\\MochiProyect\\MochiES\\MochiES_App\\INSTRUCCIONES.cs",
               "RelativeDocumentMoniker": "INSTRUCCIONES.cs",
@@ -299,7 +447,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 26,
               "Title": "FormFlasher.cs",
               "DocumentMoniker": "F:\\Program Files (x86)\\Proyectos a largo plazo\\MochiProyect\\MochiES\\MochiES_App\\MochiES_Configurador\\FormFlasher.cs",
               "RelativeDocumentMoniker": "MochiES_Configurador\\FormFlasher.cs",
@@ -311,7 +459,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 28,
               "Title": "Form1.cs [Dise\u00F1o]",
               "DocumentMoniker": "F:\\Program Files (x86)\\Proyectos a largo plazo\\MochiProyect\\MochiES\\MochiES_App\\MochiES_Configurador\\Form1.cs",
               "RelativeDocumentMoniker": "MochiES_Configurador\\Form1.cs",
@@ -322,7 +470,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 33,
               "Title": "README.md",
               "DocumentMoniker": "F:\\Program Files (x86)\\Proyectos a largo plazo\\MochiProyect\\MochiES\\MochiES_App\\README.md",
               "RelativeDocumentMoniker": "README.md",
@@ -334,7 +482,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 29,
               "Title": "Program.cs",
               "DocumentMoniker": "F:\\Program Files (x86)\\Proyectos a largo plazo\\MochiProyect\\MochiES\\MochiES_App\\MochiES_GifConverter\\Program.cs",
               "RelativeDocumentMoniker": "MochiES_GifConverter\\Program.cs",
@@ -346,7 +494,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 23,
               "Title": "Ssd1306Driver.cs",
               "DocumentMoniker": "F:\\Program Files (x86)\\Proyectos a largo plazo\\MochiProyect\\MochiES\\MochiES_App\\MochiES_Firmware\\Drivers\\Ssd1306Driver.cs",
               "RelativeDocumentMoniker": "MochiES_Firmware\\Drivers\\Ssd1306Driver.cs",
@@ -358,7 +506,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 31,
               "Title": "Lcd1602Driver.cs",
               "DocumentMoniker": "F:\\Program Files (x86)\\Proyectos a largo plazo\\MochiProyect\\MochiES\\MochiES_App\\MochiES_Firmware\\Drivers\\Lcd1602Driver.cs",
               "RelativeDocumentMoniker": "MochiES_Firmware\\Drivers\\Lcd1602Driver.cs",
@@ -370,7 +518,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 25,
               "Title": "IDisplayDriver.cs",
               "DocumentMoniker": "F:\\Program Files (x86)\\Proyectos a largo plazo\\MochiProyect\\MochiES\\MochiES_App\\MochiES_Firmware\\Drivers\\IDisplayDriver.cs",
               "RelativeDocumentMoniker": "MochiES_Firmware\\Drivers\\IDisplayDriver.cs",
@@ -382,7 +530,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 24,
               "Title": "AnimacionesMochi.cs",
               "DocumentMoniker": "F:\\Program Files (x86)\\Proyectos a largo plazo\\MochiProyect\\MochiES\\MochiES_App\\MochiES_Firmware\\UI\\AnimacionesMochi.cs",
               "RelativeDocumentMoniker": "MochiES_Firmware\\UI\\AnimacionesMochi.cs",
@@ -394,19 +542,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "Program.cs",
-              "DocumentMoniker": "F:\\Program Files (x86)\\Proyectos a largo plazo\\MochiProyect\\MochiES\\MochiES_App\\MochiES_Configurador\\Program.cs",
-              "RelativeDocumentMoniker": "MochiES_Configurador\\Program.cs",
-              "ToolTip": "F:\\Program Files (x86)\\Proyectos a largo plazo\\MochiProyect\\MochiES\\MochiES_App\\MochiES_Configurador\\Program.cs",
-              "RelativeToolTip": "MochiES_Configurador\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-20T02:34:07.453Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 30,
               "Title": "Formconverter.cs",
               "DocumentMoniker": "F:\\Program Files (x86)\\Proyectos a largo plazo\\MochiProyect\\MochiES\\MochiES_App\\MochiES_GifConverter\\Formconverter.cs",
               "RelativeDocumentMoniker": "MochiES_GifConverter\\Formconverter.cs",
@@ -418,7 +554,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 32,
               "Title": "Form1.cs [Dise\u00F1o]",
               "DocumentMoniker": "F:\\Program Files (x86)\\Proyectos a largo plazo\\MochiProyect\\MochiES\\MochiES_App\\MochiES_GifConverter\\Form1.cs",
               "RelativeDocumentMoniker": "MochiES_GifConverter\\Form1.cs",
